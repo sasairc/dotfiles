@@ -1,0 +1,48 @@
+if filereadable(expand('$HOME/.vim/vimrc.visual'))
+	source $HOME/.vim/vimrc.visual	" Loading vimrc.visual
+endif
+
+if filereadable(expand('$HOME/.vim/vimrc.neobundle'))
+	source $HOME/.vim/vimrc.neobundle	" Loading vimrc.neobundle
+endif
+
+if filereadable(expand('$HOME/.vim/vimrc.keybind'))
+	source $HOME/.vim/vimrc.keybind		" Loading vimrc.keybind
+endif
+
+if filereadable(expand('$HOME/.vim/vimrc.tweetvim'))
+	source $HOME/.vim/vimrc.tweetvim 	"Loading vimrc.tweetvim
+endif
+
+set nocp
+set ls=2
+set tabstop=4
+set ruler
+set number
+set ignorecase
+set modeline
+set autoindent
+set nobackup
+set wrap
+set hidden
+set backspace=indent,eol,start
+set cursorline
+set cindent
+set incsearch
+
+syntax on
+filetype plugin on
+set ofu=syntaxcomplete#Complete
+
+colorscheme desert
+set background=dark
+
+highlight Pmenu ctermbg=blue ctermfg=white
+highlight PmenuSel ctermbg=blue ctermfg=red
+highlight PmenuSbar ctermbg=cyan ctermfg=green
+highlight PmenuThumb ctermbg=white ctermfg=red
+
+set completeopt=longest,menuone
+
+let Tlist_Use_Right_Window = 1
+let Tlist_WinWidth = 50
