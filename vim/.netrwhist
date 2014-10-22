@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/sasai/Pictures'
-let g:netrw_dirhist_2='/home/sasai/GNUstep/Library/WindowMaker'
-let g:netrw_dirhist_3='/home/sasai/.config/geany/colorschemes'
-let g:netrw_dirhist_4='/home/sasai/local/src/eglibc/eglibc-2.13/debian'
-let g:netrw_dirhist_5='/home/sasai/Devel/menix/usr/src/cmd'
-let g:netrw_dirhist_6='/home/sasai/local/src/seamonkey/2.21/comm-release/config'
