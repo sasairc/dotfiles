@@ -3,6 +3,7 @@ autoload -Uz colors
 compinit
 colors
 
+# スクリーンロックを予防
 stty stop undef
 
 if grep '^fbterm' /proc/$PPID/cmdline > /dev/null; then
@@ -30,6 +31,8 @@ export PATH=/home/sasai/local/bin:$PATH
 alias ls="ls --color=auto"
 alias open="$HOME/local/bin/xdg-open"
 alias fbterm="fbterm --vesa-mode=379"
+alias rl="source ~/.zshrc"
+alias zh="cat ~/._zsh_history"
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 

@@ -1,0 +1,31 @@
+urxvt*preeditType:	OffTheSpot
+urxvt*termName: rxvt-256color
+
+
+urxvt*font:	xft:inconsolata:pixelsize=14
+!! urxvt*font:	xft:Ricty:pixelsize=14
+
+!! urxvt*foreground:  #00ff00
+!! urxvt*foreground:  #00aa00
+
+urxvt*foreground:  #008000
+urxvt*background:  #000000
+urxvt*color0:      #2e3436
+urxvt*color1:      #cc0000
+urxvt*color2:      #4e9a06
+urxvt*color3:      #c4a000
+urxvt*color4:      #3465a4
+urxvt*color5:      #75507b
+urxvt*color6:      #06989a
+urxvt*color7:      #d3d7cf
+urxvt*color8:      #555753
+urxvt*color9:      #ef2929
+urxvt*color10:     #8ae234
+urxvt*color11:     #fce94f
+urxvt*color12:     #729fcf
+urxvt*color13:     #ad7fa8
+urxvt*color14:     #34e2e2
+urxvt*color15:     #eeeeec
+
+!! URxvt*shading: 10
+!! URxvt*inheritPixmap: True
