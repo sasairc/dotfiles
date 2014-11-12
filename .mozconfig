@@ -1,0 +1,33 @@
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/suite_mybuild
+mk_add_options MOZ_CO_PROJECT=suite
+mk_add_options MOZ_MAKE_FLAGS="-j3"
+mk_add_options LIBS=/usr/local/lib
+mk_add_options LDFLAGS="-L/usr/local/inclue"
+
+ac_add_options --prefix=/usr/local
+ac_add_options --enable-application=suite
+ac_add_options --enable-default-toolkit=cairo-gtk2
+ac_add_options --enable-optimaize="-Wall -O3 -m64 -march=core2 -mtune=core2 -mmmx -msse -msse2 -mssse3 -msse4.1 -fomit-frame-pointer -fbranch-probabilities -pipe"
+ac_add_options --enable-xft
+ac_add_options --enable-xinerama
+ac_add_options --disable-debug
+ac_add_options --disable-debug-symbols
+ac_add_options --disable-crashreporter
+ac_add_options --disable-updater
+ac_add_options --enable-application=suite
+ac_add_options --enable-storage
+ac_add_options --disable-tests
+ac_add_options --disable-gnomeui
+ac_add_options --disable-jsd
+ac_add_options --disable-mailnews
+ac_add_options --disable-composer
+ac_add_options --disable-accessibility
+ac_add_options --disable-gnomevfs
+ac_add_options --disable-printing
+ac_add_options --disable-websms-backend
+ac_add_options --disable-ldap
+ac_add_options --enable-gstreamer
+ac_add_options --disable-feeds
+ac_add_options --disable-necko-wifi
+
+ac_add_options --with-x
