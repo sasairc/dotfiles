@@ -1,0 +1,364 @@
+{
+  Dock = {
+    AutoRaiseLower = No;
+    Applications = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = groupLeader.WPrefs;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = Yes;
+        PasteCommand = "WPrefs %s";
+        Command = WPrefs;
+      },
+      {
+        Forced = No;
+        Name = wmclock.WMClock;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,3";
+        Lock = No;
+        PasteCommand = "wmclock %s";
+        Command = wmclock;
+      },
+      {
+        Forced = No;
+        Name = "rox-filer.Rox-filer";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "rox-filer %s";
+        Command = "rox-filer";
+      },
+      {
+        Forced = No;
+        Name = sylpheed.Sylpheed;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = Yes;
+        Command = sylpheed;
+      },
+      {
+        Forced = No;
+        Name = jd.Jd;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,8";
+        Lock = No;
+        PasteCommand = "jd %s";
+        Command = jd;
+      },
+      {
+        Forced = No;
+        Name = seamonkey.Seamonkey;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = Yes;
+        PasteCommand = "seamonkey %s";
+        Command = seamonkey;
+      },
+      {
+        Forced = No;
+        Name = quodlibet.Quodlibet;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,10";
+        Lock = No;
+        PasteCommand = "quodlibet %s";
+        Command = quodlibet;
+      },
+      {
+        Forced = No;
+        Name = wmsystemtray0.wmsystemtray;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = Yes;
+        PasteCommand = "/usr/local/bin/wmsystemtray %s";
+        Command = "/usr/local/bin/wmsystemtray";
+      },
+      {
+        Forced = No;
+        Name = urxvt.URxvt;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = Yes;
+        PasteCommand = "urxvt %s";
+        Command = urxvt;
+      },
+      {
+        Forced = No;
+        Name = gimp.Gimp;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,14";
+        Lock = No;
+        PasteCommand = "gimp %s";
+        Command = gimp;
+      },
+      {
+        Forced = No;
+        Name = geany.Geany;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,9";
+        Lock = No;
+        PasteCommand = "geany %s";
+        Command = geany;
+      },
+      {
+        Forced = No;
+        Name = gqview.Gqview;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,13";
+        Lock = No;
+        PasteCommand = "gqview %s";
+        Command = gqview;
+      },
+      {
+        Forced = No;
+        Name = audacity.Audacity;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,12";
+        Lock = No;
+        PasteCommand = "audacity %s";
+        Command = audacity;
+      },
+      {
+        Forced = No;
+        Name = lingot.Lingot;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,11";
+        Lock = No;
+        PasteCommand = "lingot %s";
+        Command = lingot;
+      },
+      {
+        Forced = No;
+        Name = "mikutter\\.rb.Mikutter\\.rb";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,15";
+        Lock = No;
+        Command = "/home/sasai/local/bin/mikutter";
+      }
+    );
+    Applications1080 = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = groupLeader.WPrefs;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = Yes;
+        PasteCommand = "WPrefs %s";
+        Command = WPrefs;
+      },
+      {
+        Forced = No;
+        Name = wmclock.WMClock;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,3";
+        Lock = No;
+        PasteCommand = "wmclock %s";
+        Command = wmclock;
+      },
+      {
+        Forced = No;
+        Name = "rox-filer.Rox-filer";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "rox-filer %s";
+        Command = "rox-filer";
+      },
+      {
+        Forced = No;
+        Name = sylpheed.Sylpheed;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,7";
+        Lock = Yes;
+        Command = sylpheed;
+      },
+      {
+        Forced = No;
+        Name = jd.Jd;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,8";
+        Lock = No;
+        PasteCommand = "jd %s";
+        Command = jd;
+      },
+      {
+        Forced = No;
+        Name = seamonkey.Seamonkey;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,6";
+        Lock = Yes;
+        PasteCommand = "seamonkey %s";
+        Command = seamonkey;
+      },
+      {
+        Forced = No;
+        Name = quodlibet.Quodlibet;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,10";
+        Lock = No;
+        PasteCommand = "quodlibet %s";
+        Command = quodlibet;
+      },
+      {
+        Forced = No;
+        Name = wmsystemtray0.wmsystemtray;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = Yes;
+        PasteCommand = "/usr/local/bin/wmsystemtray %s";
+        Command = "/usr/local/bin/wmsystemtray";
+      },
+      {
+        Forced = No;
+        Name = urxvt.URxvt;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = Yes;
+        PasteCommand = "urxvt %s";
+        Command = urxvt;
+      },
+      {
+        Forced = No;
+        Name = gimp.Gimp;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,14";
+        Lock = No;
+        PasteCommand = "gimp %s";
+        Command = gimp;
+      },
+      {
+        Forced = No;
+        Name = geany.Geany;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,9";
+        Lock = No;
+        PasteCommand = "geany %s";
+        Command = geany;
+      },
+      {
+        Forced = No;
+        Name = gqview.Gqview;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,13";
+        Lock = No;
+        PasteCommand = "gqview %s";
+        Command = gqview;
+      },
+      {
+        Forced = No;
+        Name = audacity.Audacity;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,12";
+        Lock = No;
+        PasteCommand = "audacity %s";
+        Command = audacity;
+      },
+      {
+        Forced = No;
+        Name = lingot.Lingot;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,11";
+        Lock = No;
+        PasteCommand = "lingot %s";
+        Command = lingot;
+      },
+      {
+        Forced = No;
+        Name = "mikutter\\.rb.Mikutter\\.rb";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,15";
+        Lock = No;
+        Command = "/home/sasai/local/bin/mikutter";
+      }
+    );
+    Lowered = No;
+    Position = "-64,0";
+  };
+  Clip = {
+    Forced = No;
+    Name = Logo.WMClip;
+    BuggyApplication = No;
+    AutoLaunch = No;
+    Position = "450,105";
+    Lock = No;
+    Command = "-";
+  };
+  Applications = (
+    {
+      Name = gkrellm.Gkrellm;
+      Shaded = No;
+      Miniaturized = No;
+      Command = gkrellm;
+      Geometry = "167x787+2+217";
+      Hidden = No;
+      Workspace = Main;
+      ShortcutMask = 0;
+    }
+  );
+  Menus = {
+    "\\Workspace" = ("0,0");
+  };
+  Drawers = ();
+  Workspaces = (
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = Main;
+    }
+  );
+  Workspace = Main;
+}

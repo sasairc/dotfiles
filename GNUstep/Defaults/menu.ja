@@ -1,0 +1,92 @@
+
+#include "wmmacros"
+
+"Workspace" MENU
+	"案内" MENU
+		"システム概要" EXEC xterm -e /home/sasai/local/bin/mysysinfo -h            
+		"Info パネル" INFO_PANEL
+		"Legal パネル" LEGAL_PANEL
+		"システム負荷" EXEC xload -update 1
+		"プロセス一覧" EXEC urxvt -e htop
+		"マニュアル" EXEC xman
+	"案内" END
+	"ターミナル" EXEC urxvt
+	"ファイルビューア" EXEC rox-filer
+	"パスを指定して実行"	EXEC %a(パスを入力してください)
+	"ワークスペース" WORKSPACE_MENU
+
+	"アプリケーション" MENU
+		"インターネット" MENU
+			"SeaMonkey web suite" EXEC seamonkey
+			"JD 2ch Browser" EXEC jd
+			"w3m Text Browser" EXEC urxvt -e w3m www.google.co.jp
+			"Sylpheed" EXEC sylpheed
+		"インターネット" END
+
+		"グラフィクス" MENU
+			"Viewnior" EXEC viewnior
+			"GIMP 2.8.4" EXEC gimp
+			"GQview" EXEC gqview
+			"GTKam" EXEC gtkam
+			"Avidemux" EXEC "avidemux"
+		"グラフィクス"	END
+
+		"オーディオ" MENU
+			"Quodlibet" EXEC quodlibet
+			"Audacity" EXEC audacity
+			"VLC Media Player" EXEC vlc
+		"オーディオ" END	
+		
+		"エディタ" MENU
+			"VIM" EXEC urxvt -e vim
+			"Geany" EXEC geany
+		"エディタ" END
+		
+		"ターミナルエミュレータ" MENU
+			"urxvt" EXEC urxvt
+			"xterm" EXEC xterm
+		"ターミナルエミュレータ" END
+
+		"ユーティリティ" MENU
+			"BasiliskII" EXEC BasiliskII
+			"FD" EXEC urxvt -e fd
+			"電卓" EXEC xcalc
+			"xkill" EXEC xkill
+			"GKrellm" EXEC gkrellm
+			"Xclock" EXEC xclock -rv -geometry 200x200
+			"Xsnow" EXEC xsnow
+		"ユーティリティ" END
+	"アプリケーション" END
+	
+	"設定" MENU
+		"外観" MENU
+			"背景" MENU
+				"ソリッド" MENU
+	                        	"Black" WS_BACK '(solid, black)'
+		                       	"Blue"  WS_BACK '(solid, "#505075")'
+					"Indigo" WS_BACK '(solid, "#243e6c")'
+					"Bleumarine" WS_BACK '(solid, "#224477")'
+			          	"Purple" WS_BACK '(solid, "#554466")'
+			               	"Wheat"  WS_BACK '(solid, "wheat4")'
+			               	"Dark Gray"  WS_BACK '(solid, "#333340")'
+			               	"Wine" WS_BACK '(solid, "#400020")'
+				"ソリッド" END
+				"グラデーション" MENU
+					"Flag" WS_BACK '(mdgradient, green, red, white, green)'
+					"Sky" WS_BACK '(vgradient, blue4, white)'
+				"グラデーション" END
+				"イメージ" OPEN_MENU -noext BACKGROUNDS_DIR $HOME/GNUstep/Library/WindowMaker/Backgrounds WITH wmsetbg -u -t
+			"背景" END
+			"現在の設定をテーマとしてセーブ" SHEXEC getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/"%a(Theme name)"
+			"現在のアイコン集をセーブ" SHEXEC geticonset $HOME/GNUstep/Library/WindowMaker/IconSets/"%a(IconSet name)"
+		"外観" END
+
+		"WPrefs" EXEC WPrefs
+		"Alsa Mixer" EXEC urxvt -e alsamixer
+		"PulseAudio Mixer" EXEC pavucontrol
+		"xscreensaver" EXEC xscreensaver-demo
+		"mozc辞書ツール" EXEC /usr/lib/mozc/mozc_tool --mode=dictionary_tool
+	"設定"	END
+	"ハイド" HIDE_OTHERS
+	"ログアウト"	EXIT
+"Workspace" END		

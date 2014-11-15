@@ -1,0 +1,256 @@
+{
+  gkrellm.Gkrellm = {
+    SkipWindowList = Yes;
+    NoTitlebar = Yes;
+    NoAppIcon = Yes;
+    NoMiniaturizeButton = Yes;
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/gkrellm.Gkrellm.xpm";
+    NoHideOthers = Yes;
+    NoCloseButton = Yes;
+    Omnipresent = Yes;
+  };
+  jd.Jd = {
+    AlwaysUserIcon = Yes;
+    Icon = jd2.png;
+  };
+  tool_options.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-tooloption.tif";
+  };
+  xterm.XTerm = {
+    NoAppIcon = Yes;
+    Icon = GNUterm.tiff;
+  };
+  toolbox.Gimp = {
+    NoAppIcon = Yes;
+    Icon = "wmaker-gimp2.tif";
+  };
+  WMSoundServer = {
+    Icon = Sound.tiff;
+  };
+  seamonkey.Seamonkey = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/seamonkey.Seamonkey.xpm";
+  };
+  Mikutter.rb = {
+    AlwaysUserIcon = Yes;
+    Icon = twitter.png;
+  };
+  "Rox-filer" = {
+    AlwaysUserIcon = Yes;
+    Icon = FileManager.xpm;
+  };
+  "x-terminal-emulator.X-terminal-emulator" = {
+    Icon = NeXTterm2.xpm;
+  };
+  patternselection.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-patterns.tif";
+  };
+  audacity.Audacity = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/audacity.Audacity.xpm";
+  };
+  "animation-play.Animation-play" = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/animation-play.Animation-play.xpm";
+  };
+  Tile.WMClip = {
+    Icon = clip.tiff;
+  };
+  quodlibet.Quodlibet = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/quodlibet.Quodlibet.xpm";
+  };
+  rox.Rox = {
+    NoAppIcon = Yes;
+    Icon = FileManager.xpm;
+  };
+  preferences.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-prefs.tif";
+  };
+  avidemux.Avidemux = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/avidemux.Avidemux.xpm";
+  };
+  Mail.Seamonkey = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/Mail.Seamonkey.xpm";
+  };
+  indexed_color_palette.Gimp = {
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = "wmaker-gimp-palette.tif";
+  };
+  "script-fu.Script-fu" = {
+    Icon = "wmaker-gimp-script-fu.tif";
+  };
+  wprefs.WPrefs = {
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = ComputerScrewdriver.xpm;
+  };
+  layers_and_channels.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-layers.tif";
+  };
+  sylpheed.Sylpheed = {
+    Icon = MailOpen.xpm;
+  };
+  brushselection.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-brushes.tif";
+  };
+  "file-pdf-load.File-pdf-load" = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/file-pdf-load.File-pdf-load.xpm";
+  };
+  gradient_editor.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-gradient.tif";
+  };
+  gfig.Gfig = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/gfig.Gfig.xpm";
+  };
+  main_window.Sylpheed = {
+    AlwaysUserIcon = Yes;
+    Icon = MailOpen.xpm;
+  };
+  GWorkspace.GNUstep = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/GWorkspace.GNUstep.xpm";
+  };
+  Gimp = {
+    Icon = "wmaker-gimp2.tif";
+  };
+  color_palette.Gimp = {
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = "wmaker-gimp-palette.tif";
+  };
+  geany.Geany = {
+    Icon = geany_8.xpm;
+  };
+  "x-terminal-emulator.XTerm" = {
+    Icon = NeXTterm2.xpm;
+  };
+  viewnior.Viewnior = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/viewnior.Viewnior.xpm";
+  };
+  Netscape = {
+    Icon = "wmaker-netscape.tif";
+  };
+  xcalc.XCalc = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/xcalc.XCalc.xpm";
+  };
+  WPrefs = {
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = ComputerScrewdriver.xpm;
+  };
+  colorify.Colorify = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/colorify.Colorify.xpm";
+  };
+  xload.XLoad = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/xload.XLoad.xpm";
+  };
+  vlc = {
+    AlwaysUserIcon = Yes;
+    Icon = vlc.png;
+  };
+  gqview.Gqview = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/gqview.Gqview.xpm";
+  };
+  groupLeader.WPrefs = {
+    Icon = ComputerScrewdriver.xpm;
+  };
+  mikutter.rb.Mikutter.rb = {
+    AlwaysUserIcon = Yes;
+    Icon = twitter2.xpm;
+  };
+  grid.Grid = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/grid.Grid.xpm";
+  };
+  image_window.Gimp = {
+    AlwaysUserIcon = Yes;
+    Icon = "wmaker-gimp-work.tif";
+  };
+  oclock.Clock = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/oclock.Clock.xpm";
+  };
+  "Script-fu" = {
+    Icon = "wmaker-gimp-script-fu.tif";
+  };
+  gmc = {
+    SkipWindowList = Yes;
+    NoAppIcon = Yes;
+    Omnipresent = Yes;
+  };
+  vlc.Vlc = {
+    Icon = vlc.png;
+  };
+  avidemux3_qt4.Avidemux3_qt4 = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/avidemux3_qt4.Avidemux3_qt4.xpm";
+  };
+  xlogo.XLogo = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/xlogo.XLogo.xpm";
+  };
+  "color-to-aplha.Color-to-aplha" = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/color-to-aplha.Color-to-aplha.xpm";
+  };
+  xclock.XClock = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/xclock.XClock.xpm";
+  };
+  tip_of_the_day.Gimp = {
+    NoMiniaturizeButton = Yes;
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = "wmaker-gimp2.tif";
+    KeepOnTop = Yes;
+    NoCloseButton = Yes;
+  };
+  "rox-filer.Rox-filer" = {
+    Icon = FileManager.xpm;
+  };
+  lingot.Lingot = {
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = lingot.png;
+  };
+  gimp.Gimp = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/gimp.Gimp.xpm";
+  };
+  Rox = {
+    AlwaysUserIcon = Yes;
+    Icon = FileManager.xpm;
+  };
+  "gimp-2.8.Gimp-2.8" = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/gimp-2.8.Gimp-2.8.xpm";
+  };
+  Sylpheed = {
+    AlwaysUserIcon = Yes;
+    Icon = MailOpen.xpm;
+  };
+  urxvt.URxvt = {
+    Icon = NeXTterm2.xpm;
+  };
+  "uim-pref-gtk.Uim-pref-gtk" = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/uim-pref-gtk.Uim-pref-gtk.xpm";
+  };
+  gimp_startup.Gimp = {
+    NotClosable = Yes;
+    NoTitlebar = Yes;
+    NotMiniaturizable = Yes;
+    AlwaysUserIcon = Yes;
+    NoResizebar = Yes;
+    Icon = "wmaker-gimp2.tif";
+  };
+  Jd = {
+    AlwaysUserIcon = Yes;
+    Icon = "/home/sasai/GNUstep/Library/icons/jd.png";
+  };
+  XTerm = {
+    Icon = GNUterm.tiff;
+  };
+  gtkam.Gtkam = {
+    Icon = "/home/sasai/GNUstep/Library/WindowMaker/CachedPixmaps/gtkam.Gtkam.xpm";
+  };
+  Logo.WMDock = {
+    Icon = NeXTLogo.xpm;
+  };
+}

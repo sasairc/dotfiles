@@ -1,0 +1,5 @@
+{
+	MultiByteText = YES;
+	SystemFont = "Osaka:slant=0:weight=80:width=100:pixelsize=10";
+	BoldSystemFont = "Osaka:slant=0:weight=80:width=100:pixelsize=10";
+}

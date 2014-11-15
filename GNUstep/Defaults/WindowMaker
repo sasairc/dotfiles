@@ -1,0 +1,116 @@
+{
+  FTitleColor = "#ffffff";
+  LTCMaximizeKey = None;
+  CycleIgnoreMinimized = NO;
+  MenuDisabledColor = "#666666";
+  LastWorkspaceKey = None;
+  PixmapPath = (
+    "~/GNUstep/Library/WindowMaker/Backgrounds",
+    "/usr/local/share/pixmaps",
+    "/usr/share/pixmaps",
+    "/usr/local/share/WindowMaker/Backgrounds"
+  );
+  MoveToWorkspace9Key = None;
+  MoveToPrevWorkspaceLayerKey = None;
+  ClipTitleFont = "Osaka\357\274\215\347\255\211\345\271\205:slant=0:weight=80:width=100:pixelsize=14";
+  IconTitleFont = "Osaka:slant=0:weight=80:width=100:pixelsize=12";
+  MoveToWorkspace7Key = None;
+  LargeDisplayFont = "Osaka\\-UI:slant=0:weight=80:width=100:pixelsize=24";
+  RBCMaximizeKey = None;
+  DisableClip = YES;
+  IconificationStyle = twist;
+  VirtualEdgeUpKey = None;
+  WindowShortcut10Key = None;
+  MoveToWorkspace2Key = None;
+  ScrollableMenus = NO;
+  MenuTitleColor = "#ffffff";
+  WindowShortcut3Key = None;
+  MenuTitleFont = "Osaka:slant=0:weight=80:width=100:pixelsize=12";
+  WindowRelaunchKey = None;
+  SmoothWorkspaceBack = YES;
+  WindowShortcut4Key = None;
+  ShadeSpeed = ultrafast;
+  NoWindowOverDock = YES;
+  WorkspaceBack = (
+    tpixmap,
+    "/home/sasai/GNUstep/Library/WindowMaker/Backgrounds/lib755067.jpg",
+    gray20
+  );
+  VirtualEdgeLeftKey = None;
+  HighlightTextColor = "#000000";
+  LBCMaximizeKey = None;
+  WindowShortcut9Key = None;
+  HelpBalloons = NO;
+  AutoArrangeIcons = YES;
+  MoveResizeKey = None;
+  AppIconBalloons = NO;
+  WindowTitleFont = "Osaka:slant=0:weight=80:width=100:pixelsize=12";
+  MoveToWorkspace8Key = None;
+  WindowPlaceOrigin = (290, 202);
+  LHMaximizeKey = None;
+  UseSaveUnders = YES;
+  MoveToPrevWorkspaceKey = None;
+  MoveToWorkspace6Key = None;
+  DisplayFont = "Osaka:pixelsize=12:xlfd=-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-*-*";
+  MoveToWorkspace10Key = None;
+  BHMaximizeKey = None;
+  CycleActiveHeadOnly = YES;
+  VirtualEdgeRightKey = None;
+  VirtualEdgeDownKey = None;
+  MoveToWorkspace1Key = None;
+  ShowClipTitle = NO;
+  WindowShortcut1Key = None;
+  RHMaximizeKey = None;
+  THMaximizeKey = None;
+  WindowShortcut2Key = None;
+  MoveToNextWorkspaceLayerKey = None;
+  ToggleKbdModeKey = None;
+  DoNotMakeAppIconsBounce = NO;
+  MiniwindowTitleBalloons = NO;
+  MaximusKey = None;
+  WindowShortcut7Key = None;
+  OpaqueResize = NO;
+  RaiseAppIconsWhenBouncing = NO;
+  ResizeIncrement = 0;
+  WindowShortcut8Key = None;
+  DisableAnimations = YES;
+  OpaqueMoveResizeKeyboard = NO;
+  MoveToLastWorkspaceKey = None;
+  GroupNextKey = None;
+  SingleClickLaunch = NO;
+  Attraction = NO;
+  MenuTextColor = "#000000";
+  DontConfirmKill = YES;
+  AntialiasedText = NO;
+  DisableBlinking = NO;
+  MoveToWorkspace5Key = None;
+  NewStyle = old;
+  WindowListKey = None;
+  WorkspaceNameDisplayPosition = center;
+  MenuTextFont = "Osaka:slant=0:weight=80:width=100:pixelsize=12";
+  ScreenSwitchKey = None;
+  MoveToNextWorkspaceKey = None;
+  HMaximizeKey = None;
+  HighlightColor = "#ffffff";
+  GroupPrevKey = None;
+  DisableDrawers = YES;
+  MoveToWorkspace3Key = None;
+  MinimizeAllKey = None;
+  WindowShortcut5Key = None;
+  HideOthersKey = None;
+  IconPath = (
+    "/usr/local/share/WindowMaker/Icons",
+    "/usr/share/icons",
+    "/usr/local/share/pixmaps",
+    "/home/sasai/GNUstep/Library/WindowMaker/Pixmaps"
+  );
+  WindowShortcut6Key = None;
+  BounceAppIconsWhenUrgent = NO;
+  ViKeyMenus = NO;
+  UTitleColor = "#000000";
+  HighlightActiveApp = YES;
+  CirculateRaise = NO;
+  PTitleColor = "#ffffff";
+  MoveToWorkspace4Key = None;
+  RTCMaximizeKey = None;
+}

@@ -1,0 +1,86 @@
+#
+# Default twm configuration file; needs to be kept small to conserve string
+# space in systems whose compilers don't handle medium-sized strings.
+#
+# Sites should tailor this file, providing any extra title buttons, menus, etc.
+# that may be appropriate for their environment.  For example, if most of the
+# users were accustomed to uwm, the defaults could be set up not to decorate
+# any windows and to use meta-keys.
+#
+
+NoGrabServer
+RestartPreviousState
+DecorateTransients
+TitleFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+ResizeFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+MenuFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+IconFont "-adobe-helvetica-bold-r-normal--*-100-*-*-*-*-*-*"
+IconManagerFont "-adobe-helvetica-bold-r-normal--*-100-*-*-*"
+#ClientBorderWidth
+
+Color
+{
+    BorderColor "slategrey"
+    DefaultBackground "rgb:2/a/9"
+    DefaultForeground "gray85"
+    TitleBackground "rgb:2/a/9"
+    TitleForeground "gray85"
+    MenuBackground "rgb:2/a/9"
+    MenuForeground "gray85"
+    MenuBorderColor "slategrey"
+    MenuTitleBackground "gray70"
+    MenuTitleForeground "rgb:2/a/9"
+    IconBackground "rgb:2/a/9"
+    IconForeground "gray85"
+    IconBorderColor "gray85"
+    IconManagerBackground "rgb:2/a/9"
+    IconManagerForeground "gray85"
+}
+
+#
+# Define some useful functions for motion-based actions.
+#
+MoveDelta 3
+Function "move-or-lower" { f.move f.deltastop f.lower }
+Function "move-or-raise" { f.move f.deltastop f.raise }
+Function "move-or-iconify" { f.move f.deltastop f.iconify }
+
+ShowIconManager
+IconManagerGeometry	"+0+0"
+
+IconManagetDontShow
+{
+	"gkrellm"
+}
+
+Notitle
+{
+	"gkrellm"
+}
+
+#
+# Set some useful bindings.  Sort of uwm-ish, sort of simple-button-ish
+#
+
+RandomPlacement
+
+RightTitleButton ":delete" = f.delete
+button1 = : root : f.menu "Workspace"
+
+"F1" = : all :	f.exec "urxvt &"
+
+
+#
+# And a menus with the usual things
+#
+
+menu "Workspace"
+{
+	"Workspace" 	f.title
+	"Terminal"	f.exec	"urxvt &"
+	"File Vewer"	f.exec	"rox &"
+	"Seamonkey"	f.exec	"seamonkey &"
+	"Sylpheed"	f.exec	"sylpheed &"
+	"Reload .twmrc"	f.twmrc
+	"Logout"	f.quit
+}
