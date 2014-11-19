@@ -28,6 +28,10 @@ export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/usr/lib64
 export HISTFILE=/home/sasai/._zsh_history
 export PATH=/home/sasai/local/bin:$PATH
 
+alias v="vim"
+alias sc="screen"
+alias jf="fbterm"
+alias fep="uim-fep"
 alias ls="ls --color=auto"
 alias open="$HOME/local/bin/xdg-open"
 alias fbterm="fbterm --vesa-mode=379"
