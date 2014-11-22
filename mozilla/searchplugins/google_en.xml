@@ -3,20 +3,20 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
 <SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/">
-	<ShortName>Google en_US</ShortName>
-	<Description>Google Search en_US</Description>
-	<InputEncoding>UTF-8</InputEncoding>	<!-- フォームへ入力される文字コード -->
-	<Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABUUlEQVR42pWTzUsCYRCH9y9zu3SooCCkjhIRRLeIykXokiWCJ7PvDpZRlz6si1lIQZ3SQxQdOhREpgSm0JeQvfu0+i6I7LKLh4F5h5nnnRl+o6jTdHn8omAYbVqhXqvYFXcEBKFDwcoZZB8B4LkEB9cwGGmFKHb01A1EU9JXzfdvDYZi1lwLwBcVAIwsNWPesIwls7gDtB2Z7N9ujVe+IX2LO2AgItB1OL9vJqsmILDrOoK02IkBAdYy4FsQJC5h+VQCHQDWTqYSgo8fuHuRxS4Ae3stQ7UGE5ttAHqCUgfxC7m4ryrowOyeO6CxqHwZxtYFqtYc5+kNan/gDTsAeueEIRj7n/rmRQMwueUAGF0VAAT3rQBTC0Y3DoDOGbm00icML4oWHYSTgo0MFqjlmPpDgqMcFCuQf4erBzjOwXjcriu9qHg0uutO2+es6fl67T9ptebvFRjBVgAAAABJRU5ErkJggg==</Image>	<!-- 検索エンジンのファビコン -->
-	<Url type="text/html" method="GET" template="https://www.google.com/search">
-		<Param name="q" value="{searchTerms}"/>
-		<Param name="hq" value="-matome.naver -2ch -2chann -futalog -soku"/>	<!-- 除外するワード（隠しワード） -->
-		<Param name="hl" value="en"/>										<!-- 検索する言語 -->
-		<Param name="oe" value="utf-8"/>									<!-- クエリの文字コード -->
-		<Param name="ie" value="utf-8"/>									<!-- 検索結果の文字コード -->
-		<Param name="aq" value="t"/>										<!-- URLフォームからの検索であることを明示 -->
-		<Param name="safe" value="off"/>									<!-- セーフサーチoff -->
-		<Param name="num" value="20"/>										<!-- ページ毎に表示される検索結果の数 -->
-		<Param name="nfpr" value="1" />										<!-- 「次の検索結果を表示しています」を無効 -->
-	</Url>
-	<SearchForm>https://www.google.com/</SearchForm>
+    <ShortName>Google en_US</ShortName>
+    <Description>Google Search en_US</Description>
+    <InputEncoding>UTF-8</InputEncoding>    <!-- フォームへ入力される文字コード -->
+    <Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABUUlEQVR42pWTzUsCYRCH9y9zu3SooCCkjhIRRLeIykXokiWCJ7PvDpZRlz6si1lIQZ3SQxQdOhREpgSm0JeQvfu0+i6I7LKLh4F5h5nnnRl+o6jTdHn8omAYbVqhXqvYFXcEBKFDwcoZZB8B4LkEB9cwGGmFKHb01A1EU9JXzfdvDYZi1lwLwBcVAIwsNWPesIwls7gDtB2Z7N9ujVe+IX2LO2AgItB1OL9vJqsmILDrOoK02IkBAdYy4FsQJC5h+VQCHQDWTqYSgo8fuHuRxS4Ae3stQ7UGE5ttAHqCUgfxC7m4ryrowOyeO6CxqHwZxtYFqtYc5+kNan/gDTsAeueEIRj7n/rmRQMwueUAGF0VAAT3rQBTC0Y3DoDOGbm00icML4oWHYSTgo0MFqjlmPpDgqMcFCuQf4erBzjOwXjcriu9qHg0uutO2+es6fl67T9ptebvFRjBVgAAAABJRU5ErkJggg==</Image>    <!-- 検索エンジンのファビコン -->
+    <Url type="text/html" method="GET" template="https://www.google.com/search">
+        <Param name="q" value="{searchTerms}"/>
+        <Param name="hq" value="-matome.naver -2ch -2chann -futalog -soku"/>    <!-- 除外するワード（隠しワード） -->
+        <Param name="hl" value="en"/>                                       <!-- 検索する言語 -->
+        <Param name="oe" value="utf-8"/>                                    <!-- クエリの文字コード -->
+        <Param name="ie" value="utf-8"/>                                    <!-- 検索結果の文字コード -->
+        <Param name="aq" value="t"/>                                        <!-- URLフォームからの検索であることを明示 -->
+        <Param name="safe" value="off"/>                                    <!-- セーフサーチoff -->
+        <Param name="num" value="20"/>                                      <!-- ページ毎に表示される検索結果の数 -->
+        <Param name="nfpr" value="1" />                                     <!-- 「次の検索結果を表示しています」を無効 -->
+    </Url>
+    <SearchForm>https://www.google.com/</SearchForm>
 </SearchPlugin>
