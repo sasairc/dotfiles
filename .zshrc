@@ -56,3 +56,7 @@ if [ "$TERM" = "screen" ]; then
 			print -n "\ekzsh\e\\"
 	}
 fi
+
+# ~/.zsh.d/*.zsh の読み込み
+source ~/.zsh.d/csa.zsh
+source ~/.zsh.d/csa_alias.zsh
