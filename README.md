@@ -24,7 +24,8 @@
 
   * shell_script/download.sh  
     色々な意味で便利な連番画像ダウンローダ。  
-
+  * shell_script/mscrot.sh  
+    連続でスクリーンショットを撮るシェルスクリプト。  
   * shell_script/openjtalk.sh  
     OpenJtalkの簡易的なラッパ。  
     meiさんに色々とお喋りしてもらうのが楽しい。
