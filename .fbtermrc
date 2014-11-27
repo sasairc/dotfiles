@@ -3,17 +3,15 @@
 # Lines starting with '#' are ignored.
 # Note that end-of-line comments are NOT supported, comments must be on a line of their own.
 
-
 # font family names/pixelsize used by fbterm, multiple font family names must be seperated by ','
 # and using a fixed width font as the first is strongly recommended
-# font-names=IPAMonaGothic
-font-names=unifont
-font-size=16
+font-names=Terminus\-ja, Inconsolata
+font-size=12
 
 # force font width (and/or height), usually for non-fixed width fonts
 # legal value format: n (fw_new = n), +n (fw_new = fw_old + n), -n (fw_new = fw_old - n)
-font-width=8
-font-height=16
+#font-width=n
+font-height=+1
 
 # default color of foreground/background text
 # available colors: 0 = black, 1 = red, 2 = green, 3 = brown, 4 = blue, 5 = magenta, 6 = cyan, 7 = white
@@ -25,12 +23,12 @@ history-lines=1000
 
 # up to 5 additional text encodings, multiple encodings must be seperated by ','
 # run 'iconv --list' to get available encodings.
-text-encodings=
+text-encodings=UTF-8
 
 # cursor shape: 0 = underline, 1 = block
 # cursor flash interval in milliseconds, 0 means disable flashing
 cursor-shape=1
-cursor-interval=500
+cursor-interval=0
 
 # additional ascii chars considered as part of a word while auto-selecting text, except ' ', 0-9, a-z, A-Z
 word-chars=._-
@@ -40,7 +38,7 @@ word-chars=._-
 screen-rotate=0
 
 # specify the favorite input method program to run
-input-method=
+#input-method=uim-fep
 
 # treat ambiguous width characters as wide
 #ambiguous-wide=yes
