@@ -27,5 +27,5 @@ urxvt*color13:     #ad7fa8
 urxvt*color14:     #34e2e2
 urxvt*color15:     #eeeeec
 
-!! URxvt*shading: 10
-!! URxvt*inheritPixmap: True
+URxvt*shading: 10
+URxvt*inheritPixmap: True
