@@ -1,0 +1,10 @@
+""
+"" 個別にファイルを分割する程の行数でもない環境依存設定
+""
+
+" previm
+let g:previm_open_cmd = "/usr/local/bin/seamonkey"
+augroup PrevimSetting
+	autocmd!
+	autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END

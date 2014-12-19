@@ -13,3 +13,6 @@ nnoremap bd :bdelete<CR>
 " TweetVim実行時カーソル下のURLをブラウザで開く
 autocmd FileType tweetvim	nmap <Leader>o <Plug>(openbrowser-open)
 autocmd FileType tweetvim	vmap <Leader>o <Plug>(openbrowser-open)
+
+" Previm
+nnoremap mp :PrevimOpen<CR>
