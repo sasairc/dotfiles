@@ -1,12 +1,7 @@
 urxvt*preeditType:	OffTheSpot
 urxvt*termName: rxvt-256color
 
-
 urxvt*font:	xft:inconsolata:pixelsize=14
-!! urxvt*font:	xft:Ricty:pixelsize=14
-
-!! urxvt*foreground:  #00ff00
-!! urxvt*foreground:  #00aa00
 
 urxvt*foreground:  #008000
 urxvt*background:  #000000
