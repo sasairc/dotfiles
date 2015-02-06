@@ -43,13 +43,14 @@ alias rl="source ${HOME}/.zshrc"
 alias zh="cat ${HOME}/._zsh_history"
 # git
 alias gh="cd ${HOME}/Devel/git_sasairc"
-alias co='git checkout'
-alias b='git branch'
-alias c='git commit'
-alias p='git push'
-alias d='git diff'
-alias l='git log --decorete'
-alias m='git merge --no-ff'
+alias co="git checkout"
+alias b="git branch"
+alias c="git commit"
+alias p="git push"
+alias d="git diff"
+alias l="git log --decorete"
+alias lg="git log --graph"
+alias m="git merge --no-ff"
 
 ## zshで利用する色の詳細な設定
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
