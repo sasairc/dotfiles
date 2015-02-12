@@ -57,7 +57,7 @@ zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 
 ## xterm*利用時のタイトル
 precmd() {
-	print -Pn "\e]0;[${USER}@{$HOST}] %~\a"
+	print -Pn "\e]0;[${USER}@${HOST}] %~\a"
 }
 
 ## screen上でのウィンドウ一覧に、プロセス名を表示
