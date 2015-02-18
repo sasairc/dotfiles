@@ -3,15 +3,19 @@ if filereadable(expand('$HOME/.vim/vimrc.visual'))
 endif
 
 if filereadable(expand('$HOME/.vim/vimrc.neobundle'))
-	source $HOME/.vim/vimrc.neobundle	" Loading vimrc.neobundle
+	source $HOME/.vim/vimrc.neobundle	" Load vimrc.neobundle
 endif
 
 if filereadable(expand('$HOME/.vim/vimrc.keybind'))
-	source $HOME/.vim/vimrc.keybind		" Loading vimrc.keybind
+	source $HOME/.vim/vimrc.keybind		" Load vimrc.keybind
 endif
 
 if filereadable(expand('$HOME/.vim/vimrc.tweetvim'))
-	source $HOME/.vim/vimrc.tweetvim 	"Loading vimrc.tweetvim
+	source $HOME/.vim/vimrc.tweetvim 	" Load vimrc.tweetvim
+endif
+
+if filereadable(expand('$HOME/.vim/vimrc.local'))
+	source $HOME/.vim/vimrc.local		" Load vimrc.local
 endif
 
 set nocp
@@ -20,9 +24,9 @@ set ruler
 set number
 set ignorecase
 set modeline
-" set autoindent
 set nobackup
-set wrap
+set noswapfile
+set nowrap
 set hidden
 set backspace=indent,eol,start
 set cursorline
