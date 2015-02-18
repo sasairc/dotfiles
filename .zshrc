@@ -48,8 +48,7 @@ alias b="git branch"
 alias c="git commit"
 alias p="git push"
 alias d="git diff"
-alias l="git log --decorete"
-alias lg="git log --graph"
+alias l="git log --decorete=full --graph"
 alias m="git merge --no-ff"
 
 ## zshで利用する色の詳細な設定
