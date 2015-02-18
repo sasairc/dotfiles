@@ -30,6 +30,7 @@ export LD_LIBRARY_PATH="/usr/local/lib:/lib:/lib64:/usr/lib:/usr/lib64:/home/sas
 export LD_RUN_PATH="${LD_LIBRARY_PATH}"
 export RPATH="${LD_LIBRARY_PATH}"
 export MANPATH="${MANPATH}:${HOME}/local/man"
+export GHPROJ="${HOME}/Devel/git_sasairc"
 
 ## aliasの設定
 alias v="vim"
@@ -42,13 +43,13 @@ alias fep="uim-fep"
 alias rl="source ${HOME}/.zshrc"
 alias zh="cat ${HOME}/._zsh_history"
 # git
-alias gh="cd ${HOME}/Devel/git_sasairc"
+alias gh="cd ${GHPROJ}"
 alias co="git checkout"
 alias b="git branch"
 alias c="git commit"
 alias p="git push"
 alias d="git diff"
-alias l="git log --decorete=full --graph"
+alias l="git log --decorate=full --graph"
 alias m="git merge --no-ff"
 
 ## zshで利用する色の詳細な設定
