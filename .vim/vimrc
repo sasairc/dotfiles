@@ -40,10 +40,10 @@ set softtabstop=0
 syntax on
 filetype plugin on
 set ofu=syntaxcomplete#Complete
+set ambiwidth=double
 
 colorscheme desert
 set background=dark
-
 highlight Pmenu ctermbg=blue ctermfg=white
 highlight PmenuSel ctermbg=blue ctermfg=red
 highlight PmenuSbar ctermbg=cyan ctermfg=green
