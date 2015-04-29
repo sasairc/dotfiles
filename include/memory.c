@@ -1,5 +1,5 @@
 /*
- *
+ * clangsay -  The classic cowsay program, written in C.
  *
  * memory.c
  *
@@ -16,46 +16,46 @@
 
 char** malloc2d(int x, int y)
 {
-	char**	buf;
-	int		i;
+    char**  buf;
+    int     i;
 
-	buf = (char**) malloc(sizeof(char*) * y);		/* Allocate array for Y coordinate */
-	if (buf == NULL) {
-		return NULL;
-	}
-	for (i = 0; i < y; i++) {
-		buf[i] = (char*)malloc(sizeof(char) * x);	/* Allocate array for X coordinate */
-	}
+    buf = (char**) malloc(sizeof(char*) * y);       /* Allocate array for Y coordinate */
+    if (buf == NULL) {
+        return NULL;
+    }
+    for (i = 0; i < y; i++) {
+        buf[i] = (char*)malloc(sizeof(char) * x);   /* Allocate array for X coordinate */
+    }
 
-	return buf;
+    return buf;
 }
 
 int init2d(char** buf, int x, int y)
 {
-	int i, j;
+    int i, j;
 
-	/* Initialize each element of array */
-	for (i = 0; i < y; i++) {
-		if (buf[i] == NULL) buf[i] = (char*)malloc(sizeof(char) * x);	/* If memory allocation failure, do retry memory allocation. */
-		for (j = 0; j < x; j++) {
-			buf[i][j] = ' ';
-		}
-	}
+    /* Initialize each element of array */
+    for (i = 0; i < y; i++) {
+        if (buf[i] == NULL) buf[i] = (char*)malloc(sizeof(char) * x);   /* If memory allocation failure, do retry memory allocation. */
+        for (j = 0; j < x; j++) {
+            buf[i][j] = ' ';
+        }
+    }
 
-	return 0;
+    return 0;
 }
-			
+            
 void free2d(char** buf, int y)
 {
-	int i;
+    int i;
 
-	for (i = 0; i < y; i++) {
-		if (buf[i] != NULL) {
-			free(buf[i]);		/* Memory release the Y coordinate. */
-			buf[i] = NULL;
-		}
-	}
-	free(buf);					/* Release for Memory */
+    for (i = 0; i < y; i++) {
+        if (buf[i] != NULL) {
+            free(buf[i]);       /* Memory release the Y coordinate. */
+            buf[i] = NULL;
+        }
+    }
+    free(buf);                  /* Release for Memory */
 
-	return;
+    return;
 }

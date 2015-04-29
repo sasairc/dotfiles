@@ -1,5 +1,5 @@
 /*
- *
+ * clangsay -  The classic cowsay program, written in C.
  *
  * string.h
  *
@@ -11,10 +11,11 @@
  */
 
 
-#ifndef	YSTRING_H
-#define	YSTRING_H
+#ifndef YSTRING_H
+#define YSTRING_H
 
-#define	LOCALE "ja_JP.UTF-8"
+#define WITH_GLIB   /* use glib */
+#define LOCALE "ja_JP.UTF-8"
 
 /* This functions is required string.c */
 extern int strrep(char* src, char* haystack, char* needle);

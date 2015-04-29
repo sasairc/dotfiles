@@ -1,5 +1,5 @@
 /*
- *
+ * clangsay -  The classic cowsay program, written in C.
  *
  * file.h 
  *

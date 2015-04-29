@@ -1,5 +1,5 @@
 /*
- *
+ * clangsay -  The classic cowsay program, written in C.
  *
  * string.c
  *
@@ -17,122 +17,163 @@
 #include <string.h>
 #include <locale.h>
 
+#ifdef  WITH_GLIB
+#include <glib.h>
+#endif
+
 int strrep(char* src, char* haystack, char* needle)
 {
-	char* find = NULL;
+    char* find = NULL;
 
-	if (src == NULL || haystack == NULL || needle == NULL) {
-		return 1;
-	}
+    if (src == NULL || haystack == NULL || needle == NULL) {
+        return 1;
+    }
 
-	/* seach strings */
-	if ((find = strstr(src, haystack)) == NULL) {
-		return 3;		/* word not found */
-	}
-	if (strlen(haystack) < strlen(needle)) {
-		src = (char*)realloc(src, strlen(src) + strlen(needle) + 1 - strlen(haystack));	/* reallocate memory */
-		/* move match word to specified location in memory */
-		memmove(
-			find + strlen(needle),
-			find + strlen(haystack),
-			strlen(src) - strlen(haystack) - (find - src) + 1
-		);
-		memcpy(find, haystack, strlen(needle));
-	} else {
-		memcpy(find, needle, strlen(needle));
-		/* move match word to specified location in memory */
-		if (strlen(haystack) > strlen(needle)) {
-			memmove(
-				find + strlen(needle),
-				find + strlen(haystack),
-				strlen(src) - strlen(haystack) - (find - src) + 1
-			);
-		}
-	}
+    /* seach strings */
+    if ((find = strstr(src, haystack)) == NULL) {
+        return 3;       /* word not found */
+    }
+    if (strlen(haystack) < strlen(needle)) {
+        src = (char*)realloc(src, strlen(src) + strlen(needle) + 1 - strlen(haystack)); /* reallocate memory */
+        /* move match word to specified location in memory */
+        memmove(
+            find + strlen(needle),
+            find + strlen(haystack),
+            strlen(src) - strlen(haystack) - (find - src) + 1
+        );
+        memcpy(find, haystack, strlen(needle));
+    } else {
+        memcpy(find, needle, strlen(needle));
+        /* move match word to specified location in memory */
+        if (strlen(haystack) > strlen(needle)) {
+            memmove(
+                find + strlen(needle),
+                find + strlen(haystack),
+                strlen(src) - strlen(haystack) - (find - src) + 1
+            );
+        }
+    }
 
-	return 0;
+    return 0;
 }
 
 char* strlion(int argnum, ...)
 {
-	char*	buf		= NULL;
-	char**	argmnt	= NULL;
-	int		i		= 0;
-	size_t	size	= 0;	/* string size */
-	va_list	list;			/* list of variable arguments */
+    char*   buf     = NULL;
+    char**  argmnt  = NULL;
+    int     i       = 0;
+    size_t  size    = 0;    /* string size */
+    va_list list;           /* list of variable arguments */
 
-	argmnt = (char**)malloc(sizeof(char*) * argnum);
-	if (argmnt == NULL)
-		return NULL;
+    argmnt = (char**)malloc(sizeof(char*) * argnum);
+    if (argmnt == NULL)
+        return NULL;
 
-	/* processing of variable arguments */
-	va_start(list, argnum);
-	for (i = 0; i < argnum; i++) {
-		argmnt[i] = va_arg(list, char*);
-	}
-	va_end(list);
+    /* processing of variable arguments */
+    va_start(list, argnum);
+    for (i = 0; i < argnum; i++) {
+        argmnt[i] = va_arg(list, char*);
+    }
+    va_end(list);
 
-	/* count of string size */
-	for (i = 0; i < argnum; i++) {
-		size = size + strlen(argmnt[i]);
-	}
-	buf = (char*)malloc(sizeof(char) * (size + 1));	/* memory allocation */
+    /* count of string size */
+    for (i = 0; i < argnum; i++) {
+        size = size + strlen(argmnt[i]);
+    }
+    buf = (char*)malloc(sizeof(char) * (size + 1)); /* memory allocation */
 
-	for (i = 0; i < argnum; i++) {
-		strcat(buf, argmnt[i]);		/* string concatenate */
-	}
-	free(argmnt);
+    for (i = 0; i < argnum; i++) {
+        strcat(buf, argmnt[i]);     /* string concatenate */
+    }
+    free(argmnt);
 
-	return buf;
+    return buf;
 }
 
+#ifdef  WITH_GLIB
 int mbstrlen(char* src)
 {
-	int	i = 0;
-	int	ch = 0;
-	int	len = 0;
+    int         i    = 0;
+    int         ch   = 0;
+    int         len  = 0;
+    gunichar*   cpoints;
 
-	setlocale(LC_CTYPE, LOCALE);			/* set locale (string.h) */
+    setlocale(LC_CTYPE, LOCALE);            /* set locale (string.h) */
 
-	while (src[i] != '\0') {
-		ch = mblen(&src[i], MB_CUR_MAX);	/* get string length */
-		if (ch > 1) {
-			len = len + 2;					/* multi byte */
-		} else {
-			len++;							/* ascii */
-		}
-		i += ch;							/* seek offset */
-	}
+    while (src[i] != '\0') {
+        ch = mblen(&src[i], MB_CUR_MAX);    /* get string length */
+        if (ch > 1) {
+            cpoints = g_utf8_to_ucs4_fast(&src[i], sizeof(src[i]), NULL);   /* get unicode code point */
 
-	return len;
+            /*
+             * multi byte
+             * true : hankaku kana
+             * false: other
+             */
+            if (cpoints[0] >= 0xff65 && cpoints[0] <= 0xff9f) {
+                len++;
+            } else {
+                len += 2;
+            }
+
+            g_free(cpoints);
+        } else {
+            len++;                          /* ascii */
+        }
+        i += ch;                            /* seek offset */
+    }
+
+    return len;
 }
+#else
+int mbstrlen(char* src)
+{
+    int i = 0;
+    int ch = 0;
+    int len = 0;
+
+    setlocale(LC_CTYPE, LOCALE);            /* set locale (string.h) */
+
+    while (src[i] != '\0') {
+        ch = mblen(&src[i], MB_CUR_MAX);    /* get string length */
+        if (ch > 1) {
+            len += 2;                       /* multi byte */
+        } else {
+            len++;                          /* ascii */
+        }
+        i += ch;                            /* seek offset */
+    }
+
+    return len;
+}
+#endif
 
 int strunesc(char* src)
 {
-	int i = 0;
-	int count = 0;
+    int i = 0;
+    int count = 0;
 
-	while (src[i] != '\0') {
-		if (src[i] == '\t' || src[i] == '\b') {
-			src[i] = ' ';
-			count++;
-		}
-		i++;
-	}
+    while (src[i] != '\0') {
+        if (src[i] == '\t' || src[i] == '\b') {
+            src[i] = ' ';
+            count++;
+        }
+        i++;
+    }
 
-	return count;
+    return count;
 }
-			
+            
 int strmax(int val, char** src)
 {
-	int	i;
-	int	len = 0;
-	int	max = 0;
+    int i;
+    int len = 0;
+    int max = 0;
 
-	for (i = 0; i < val; i++) {
-		len = mbstrlen(src[i]);
-		if (max < len)	max = len;
-	}
+    for (i = 0; i < val; i++) {
+        len = mbstrlen(src[i]);
+        if (max < len)  max = len;
+    }
 
-	return max;
+    return max;
 }
