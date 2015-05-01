@@ -8,12 +8,14 @@ stty stop undef	# スクリーンロックを予防
 ## 環境変数の設定
 if grep '^fbterm' /proc/${PPID}/cmdline > /dev/null; then
 	export TERM=fbterm	# fbterm利用時にTERM=fbtermを指定
+#	setterm -blank 0	# スクリーン消灯を無効
 fi
 
 if [ ${TERM} = "xterm"  -o ${TERM} = "rxvt-256color" -o ${TERM} = "screen" -o ${TERM} = "fbterm" ]; then
 	export LANG=ja_JP.UTF-8	# xterm及び、fbterm利用時はLANG=ja_JP.UTF-8を設定
 else
 	export LANG=C		# TERM=linux等であればLANG=Cを設定
+#	setterm -blank 0	# スクリーン消灯を無効
 fi
 
 export HISTSIZE=100000
