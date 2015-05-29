@@ -5,7 +5,7 @@ export QT_IM_MODULE=uim
 export WMPATH="/usr/local/bin/wmaker"
 
 xmodmap ~/.Xmodmap
-xset m 20/10 4
+xset m 6 4
 
 /usr/local/bin/pulseaudio -D
 /usr/bin/xscreensaver-command -exit
