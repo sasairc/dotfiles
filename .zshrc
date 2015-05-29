@@ -62,6 +62,11 @@ precmd() {
 	print -Pn "\e]0;[${USER}@${HOST}] %~\a"
 }
 
+## 煽り
+#function command_not_found_handler() {
+#	yasuna -n 1805 | sed -e "s/瓦/$0/g"
+#}
+
 ## screen上でのウィンドウ一覧に、プロセス名を表示
 if [ "${TERM}" = "screen" ]; then
 	preexec() {
