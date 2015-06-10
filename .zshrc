@@ -37,6 +37,7 @@ export CXXFLAGS="${CFLAGS}"				# CFLAGSをg++でも利用
 ## aliasの設定
 alias v="vim"
 alias sc="screen"
+alias ht="headtail --pretty"
 alias ls="ls --color=auto"
 alias open="${HOME}/local/bin/xdg-open"
 alias fbterm="FONTCONFIG_FILE="~/.fonts.conf.fbterm" fbterm --vesa-mode=379"
