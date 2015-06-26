@@ -6,7 +6,7 @@ MAKE	:= make
 CC	:= cc
 rm	:= rm
 CFLAGS	=
-SRCS	= file.c memory.c string.c
+SRCS	= file.c memory.c string.c signal.c
 OBJS	= $(SRCS:.c=.so)
 PKGCFG	:= `pkg-config --cflags --libs glib-2.0`
 
@@ -23,6 +23,9 @@ memory.so: memory.c
 
 string.so: string.c
 	$(CC) $(DEFCFLAGS) string.c -o string.so
+
+signal.so: signal.c
+	$(CC) $(DEFCFLAGS) signal.c -o signal.so
 
 .PHONY: clean
 clean:
