@@ -49,3 +49,8 @@ NeoBundle "Shougo/unite.vim"
 
 " Let Neobundle manage previm(*.md Preview)
 NeoBundle "kannokanno/previm"
+
+"Let Neobundle manage vimsay
+NeoBundle "844196/vimsay", {
+	\ 'depends': 'Shougo/unite.vim'
+	\ }
