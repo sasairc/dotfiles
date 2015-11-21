@@ -23,8 +23,8 @@ export SAVEHIST=100000
 export HISTFILE="${HOME}/._zsh_history"
 export PROMPT="%{${fg[red]}%}%n@%m%{${reset_color}%}%f [ %~ ] %h %# "
 
-export PATH="${PATH}:${HOME}/local/bin"
-export LD_LIBRARY_PATH="/usr/local/lib:/lib:/lib64:/usr/lib:/usr/lib64:/home/sasai/local/lib"
+export PATH="${HOME}/perl5/bin${PATH+:}${PATH}:${HOME}/local/bin"
+export LD_LIBRARY_PATH="/usr/local/lib:/lib:/lib64:/usr/lib:/usr/lib64:${HOME}/local/lib"
 export LD_RUN_PATH="${LD_LIBRARY_PATH}"
 export RPATH="${LD_LIBRARY_PATH}"
 export MANPATH="${MANPATH}:${HOME}/local/man"
@@ -34,6 +34,12 @@ export DEB_BUILD_OPTIONS="parallel=3"	# dpkg-buildpackageするときのプロ�
 export CFLAGS="-Wall -O3 -m64 -march=core2 -mtune=core2 -mmmx -msse -msse2 -mssse3 -msse4.1 -fomit-frame-pointer -fbranch-probabilities -pipe"	# ccで使用するCFLAGS
 export CXXFLAGS="${CFLAGS}"				# CFLAGSをg++でも利用
 
+export PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"
+export PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"
+export PERL_MB_OPT="--install_base \"${HOME}/perl5\""
+export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"
+export PERL_CPANM_OPT="--local-lib=~/perl5"
+
 ## aliasの設定
 alias v="vim"
 alias sc="screen"
@@ -41,13 +47,15 @@ alias ht="headtail --pretty"
 alias ls="ls --color=auto"
 alias open="${HOME}/local/bin/xdg-open"
 alias fbterm="FONTCONFIG_FILE="~/.fonts.conf.fbterm" fbterm --vesa-mode=379"
+#alias fbterm="fbterm --vesa-mode=379"
 alias gtime="/usr/bin/time"
 alias lsb_release="lsb_release -idrc"
 alias fep="uim-fep"
 alias rl="source ${HOME}/.zshrc"
 alias zh="cat ${HOME}/._zsh_history"
+alias sshs="ssh ssiserver.moe.hm -l sasai"
 # git
-alias gh="cd ${GHPROJ}"
+alias gh="cd ${GHPROJ}/"
 alias co="git checkout"
 alias b="git branch"
 alias c="git commit"
