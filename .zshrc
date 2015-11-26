@@ -40,6 +40,8 @@ export PERL_MB_OPT="--install_base \"${HOME}/perl5\""
 export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"
 export PERL_CPANM_OPT="--local-lib=~/perl5"
 
+export DEFAULT_COWFILE="yasuna_9"
+
 ## aliasの設定
 alias v="vim"
 alias sc="screen"
