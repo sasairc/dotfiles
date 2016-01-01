@@ -12,7 +12,8 @@ xset m 6 4
 /usr/bin/xscreensaver &
 /usr/bin/uim-xim &
 /usr/local/bin/wmsystemtray &
-/home/sasai/local/bin/2chproxy.pl &
+# /home/sasai/local/bin/2chproxy.pl &
+perl /home/sasai/local/bin/2chproxy.pl_v1.0.1.pl &
 
 #exec twm
 exec ${WMPATH}
