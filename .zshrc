@@ -44,6 +44,7 @@ export COWPATH="/usr/share/clangsay/cows:${GHPROJ}/my_cows"
 export DEFAULT_COWFILE="yasuna_9"
 
 ## aliasの設定
+alias ..="cd .."
 alias v="vim"
 alias sc="screen"
 alias ht="headtail --pretty"
