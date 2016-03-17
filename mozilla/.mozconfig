@@ -1,4 +1,5 @@
 mk_add_options MOZ_OBJDIR="/home/sasai/local/src/seamonkey/2.40/seamonkey-2.40/suite_mybuild"
+mk_add_options PROFILE_GEN_SCRIPT='$(MAKE) -C $(MOZ_OBJDIR) pgo-profile-run'
 mk_add_options MOZ_CO_PROJECT="suite"
 mk_add_options MOZ_MAKE_FLAGS="-j5"
 
@@ -9,15 +10,12 @@ ac_add_options --enable-optimaize="-Wall -O3 -m64 -march=core2 -mtune=core2 -mmm
 ac_add_options --enable-xft
 ac_add_options --enable-xinerama
 ac_add_options --enable-storage
-ac_add_options --enable-ffmpeg
 ac_add_options --enable-gstreamer
-ac_add_options --enable-pulseaudio
 
 ac_add_options --disable-debug
 ac_add_options --disable-debug-symbols
 ac_add_options --disable-crashreporter
 ac_add_options --disable-updater
-# ac_add_options --disable-tests
 ac_add_options --disable-gnomeui
 ac_add_options --disable-jsd
 ac_add_options --disable-mailnews
