@@ -1,0 +1,4 @@
+command: yasuna | clangsay -f yasuna_12 | lolcat
+file:~/Mail/twitter
+verbose:1
+interval:1
