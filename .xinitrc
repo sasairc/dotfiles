@@ -3,10 +3,11 @@ export XMODIFIERS=@im=uim
 export GTK_IM_MODULE=uim
 export QT_IM_MODULE=uim
 export WMPATH="/usr/local/bin/wmaker"
-export LD_LIBRARY_PATH="/lib:/lib64:/usr/local/lib:/usr/lib:/usr/lib64:/home/sasai/local/lib"
+export LD_LIBRARY_PATH="/usr/local/lib:/lib:/lib64:/usr/lib:/usr/lib64:/home/sasai/local/lib"
 
 xmodmap ~/.Xmodmap
 xset m 20/10 4
+xset r rate 192 32
 
 /usr/bin/xscreensaver-command -exit
 /usr/bin/xscreensaver &
