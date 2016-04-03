@@ -6,13 +6,14 @@ export WMPATH="/usr/local/bin/wmaker"
 
 xmodmap ~/.Xmodmap
 xset m 6 4
+xset r rate 192 32
 
 /usr/local/bin/pulseaudio -D
 /usr/bin/xscreensaver-command -exit
 /usr/bin/xscreensaver &
 /usr/bin/uim-xim &
 /usr/local/bin/wmsystemtray &
-# /home/sasai/local/bin/2chproxy.pl &
+# /usr/games/xsnow -nosanta &
 perl /home/sasai/local/bin/2chproxy.pl_v1.0.1.pl &
 
 #exec twm
