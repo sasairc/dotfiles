@@ -1,3 +1,6 @@
+# ターミナルのタイプ
+term screen-256color
+
 # 使用する文字コードの設定
 encoding utf-8 utf-8
 defencoding utf-8

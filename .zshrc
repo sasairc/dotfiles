@@ -23,7 +23,7 @@ function set_env_generic() {
 
 	# 1. xterm及び、fbterm利用時はLANG=ja_JP.UTF-8を設定
 	# 2. TERM=Linux等であればLANG=Cを設定
-	if [ ${TERM} = "xterm"  -o ${TERM} = "rxvt-256color" -o ${TERM} = "screen" -o ${TERM} = "fbterm" ]; then
+	if [ ${TERM} = "xterm" -o ${TERM} = "rxvt-256color" -o ${TERM} = "screen" -o ${TERM} = "screen-256color" -o ${TERM} = "fbterm" ]; then
 		export LANG="ja_JP.UTF-8"
 	else
 		export LANG="C"
@@ -139,10 +139,10 @@ function precmd() {
 	return 0
 }
 
-function command_not_found_handler() {
+#function command_not_found_handler() {
 	# 煽り
-	yasuna -n 1896 | sed -e "s/財布/ \$PATH /g" -e "s/何も/ $0 が/g"
-}
+#	yasuna -n 1896 | sed -e "s/財布/ \$PATH /g" -e "s/何も/ $0 が/g"
+#}
 
 set_tty_opts
 
