@@ -1,6 +1,16 @@
 set statusline=%t\ %m%r%h%w[%Y][%{&fenc}][%{&ff}]%=\%{g:Date()}C:%04c,L:%04l/%04L%4p%%
+
+" 背景色をそのまま適用
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+
+" お好きなカラースキーム
+colorscheme desert
+set background=dark
+
 " インサートモード時の色変更
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+let g:hi_insert = 'highlight StatusLine gui=none ctermfg=yellow ctermbg=black'
+
 if has('syntax')
 	augroup InsertHook
 		autocmd!
@@ -28,6 +38,11 @@ function! s:GetHighlight(hi)
 	let hl = substitute(hl, 'xxx', '', '')
 	return hl
 endfunction
+
+if has('unix') && !has('gui_running')
+	inoremap <silent> <ESC> <ESC>
+	inoremap <silent> <C-c> <ESC>
+endif
  
 " ステータスラインに日時を表示する
 function! g:Date()
