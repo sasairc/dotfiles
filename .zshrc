@@ -119,7 +119,7 @@ function set_zsh_misc_opts() {
 
 function set_screen_proc_name() {
 	# screen上でのウィンドウ一覧に、プロセス名を表示
-	if [ "${TERM}" = "screen" ]; then
+	if [ "${TERM}" = "screen" -o "${TERM}" = "screen-256color" ]; then
 		function preexec() {
 			1="$1 "
 			print -n "\ek${${(s: :)1}[1]}\e\\"
