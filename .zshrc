@@ -71,7 +71,7 @@ function set_env_perl5() {
 }
 
 function set_env_clangsay() {
-	export COWPATH="${GHPROJ}/my_cows:/usr/share/clangsay/cows"
+	export COWPATH="/usr/share/clangsay/cows:${GHPROJ}/my_cows"
 	export DEFAULT_COWFILE="yasuna_09"
 
 	return 0
@@ -135,6 +135,13 @@ function set_screen_proc_name() {
 function precmd() {
 	# xterm利用時のタイトル
 	print -Pn "\e]0;[${USER}@${HOST}] %~\a"
+
+	return 0
+}
+
+function swtmpdir() {
+	local TEMP=$(mktemp -d)
+	cd $TEMP
 
 	return 0
 }
