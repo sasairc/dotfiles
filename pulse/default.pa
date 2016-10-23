@@ -13,19 +13,10 @@
 # General Public License for more details.
 #
 # You should have received a copy of the GNU Lesser General Public License
-# along with PulseAudio; if not, write to the Free Software Foundation,
-# Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+# along with PulseAudio; if not, see <http://www.gnu.org/licenses/>.
 
 # This startup script is used only if PulseAudio is started per-user
 # (i.e. not in system mode)
-
-.nofail
-
-### Load something into the sample cache
-#load-sample-lazy x11-bell /usr/share/sounds/gtk-events/activate.wav
-#load-sample-lazy pulse-hotplug /usr/share/sounds/startup3.wav
-#load-sample-lazy pulse-coldplug /usr/share/sounds/startup3.wav
-#load-sample-lazy pulse-access /usr/share/sounds/generic.wav
 
 .fail
 
@@ -44,8 +35,8 @@ load-module module-switch-on-port-available
 ### Load audio drivers statically
 ### (it's probably better to not load these drivers manually, but instead
 ### use module-udev-detect -- see below -- for doing this automatically)
-load-module module-alsa-sink device=hw:0,1
-load-module module-alsa-source device=hw:0,1
+#load-module module-alsa-sink
+#load-module module-alsa-source device=hw:1,0
 #load-module module-oss device="/dev/dsp" sink_name=output source_name=input
 #load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
 #load-module module-null-sink
@@ -134,12 +125,6 @@ load-module module-role-cork
 ### loading modules and rerouting streams.
 load-module module-filter-heuristics
 load-module module-filter-apply
-
-### Load DBus protocol
-.ifexists module-dbus-protocol.so
-load-module module-dbus-protocol
-.endif
-
 
 ### Make some devices default
 #set-default-sink output

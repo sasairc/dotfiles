@@ -13,8 +13,7 @@
 # General Public License for more details.
 #
 # You should have received a copy of the GNU Lesser General Public License
-# along with PulseAudio; if not, write to the Free Software Foundation,
-# Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+# along with PulseAudio; if not, see <http://www.gnu.org/licenses/>.
 
 # This startup script is used only if PulseAudio is started in system
 # mode.
@@ -42,11 +41,6 @@ load-module module-device-restore
 ### NOTE: This should be loaded as early as possible so that subsequent modules
 ### that look up the default sink/source get the right value
 load-module module-default-device-restore
-
-.ifexists module-dbus-protocol.so
-### If you want to allow TCP connections, set access to "remote" or "local,remote".
-load-module module-dbus-protocol access=local
-.endif
 
 ### Automatically move streams to the default sink if the sink they are
 ### connected to dies, similar for sources

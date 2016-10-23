@@ -8,7 +8,7 @@ xmodmap ~/.Xmodmap
 xset m 6 4
 xset r rate 192 32
 
-/usr/local/bin/pulseaudio -D
+/usr/local/bin/pulseaudio --start
 /usr/bin/xscreensaver-command -exit
 /usr/bin/xscreensaver &
 /usr/bin/uim-xim &
