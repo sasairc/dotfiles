@@ -16,6 +16,11 @@ function set_env_generic() {
 	export PROMPT="%{${fg[red]}%}%n@%m%{${reset_color}%}%f [ %~ ] %h %# "
 	export LESSHISTFILE=-
 
+	# エディタさん
+	test -f /usr/local/bin/vim				&& \
+		export EDITOR=/usr/local/bin/vim	|| \
+		export EDITOR=vim
+
 	# fbterm利用時にTERM=fbtermを設定
 	if grep '^fbterm' /proc/${PPID}/cmdline > /dev/null; then
 		export TERM="fbterm"
@@ -34,7 +39,7 @@ function set_env_generic() {
 }
 
 function set_env_expath() {
-	export PATH="${HOME}/perl5/bin${PATH+:}${PATH}:${HOME}/local/bin"
+	export PATH="${PATH}:${HOME}/local/bin"
 	export LD_LIBRARY_PATH="/usr/local/lib:/lib:/lib64:/usr/lib:/usr/lib64:${HOME}/local/lib"
 	export LD_RUN_PATH="${LD_LIBRARY_PATH}"
 	export RPATH="${LD_LIBRARY_PATH}"
@@ -54,18 +59,27 @@ function set_env_gcc_x86_64_flags() {
 
 function set_env_gcc_armhf_flags () {
 	export DEB_BUILD_OPTIONS="parallel=3"
-	export CFLAGS="-march=armv8-a+crc -mtune=cortex-a53 -mfpu=crypto-neon-fp-armv8 -mfloat-abi=hard -ftree-vectorize -funsafe-math-optimizations -O3 -pipe"
+	export CFLAGS="-O3 -march=armv8-a+crc -mtune=cortex-a53 -mfpu=crypto-neon-fp-armv8 -mfloat-abi=hard -ftree-vectorize -funsafe-math-optimizations -pipe"
 	export CXXFLAGS="${CFLAGS}"
 
 	return 0
 }
 
 function set_env_perl5() {
+	export PATH="${PATH}:${HOME}/perl5/bin"
 	export PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"
 	export PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"
 	export PERL_MB_OPT="--install_base \"${HOME}/perl5\""
 	export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"
 	export PERL_CPANM_OPT="--local-lib=~/perl5"
+
+	return 0
+}
+
+function set_env_go() {
+	export GOROOT="${HOME}/local/lib/go"
+	export GOPATH="${GHPROJ}/go"
+	export PATH="${PATH}:${GOROOT}/bin"
 
 	return 0
 }
@@ -93,6 +107,7 @@ function set_alias_generic() {
 	alias rl="source ${HOME}/.zshrc"
 	alias zh="cat ${HOME}/._zsh_history"
 	alias sshs="ssh ssiserver.moe.hm -l sasai"
+	alias mbhead="mbhead -p"
 
 	return 0
 }
@@ -146,6 +161,14 @@ function swtmpdir() {
 	return 0
 }
 
+function mntrng() {
+	tail -f /var/log/rsync_backup.log &
+	clear
+	clbiff
+
+	return 0
+}
+
 #function command_not_found_handler() {
 	# 煽り
 #	yasuna -n 1896 | sed -e "s/財布/ \$PATH /g" -e "s/何も/ $0 が/g"
@@ -157,6 +180,7 @@ set_env_generic
 set_env_expath
 set_env_gcc_x86_64_flags
 set_env_perl5
+set_env_go
 set_env_clangsay
 
 set_alias_generic
