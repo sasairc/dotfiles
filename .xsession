@@ -14,7 +14,7 @@ xset r rate 192 32
 /usr/bin/uim-xim &
 /usr/local/bin/wmsystemtray &
 # /usr/games/xsnow -nosanta &
-perl /home/sasai/local/bin/2chproxy.pl_v1.0.1.pl &
+perl /home/sasai/local/bin/2chproxy.pl &
 
 #exec twm
 exec ${WMPATH}
