@@ -13,6 +13,7 @@ xset r rate 192 32
 /usr/bin/xscreensaver &
 /usr/bin/uim-xim &
 /usr/local/bin/wmsystemtray &
+/usr/local/bin/urxvt -geometry 228x72+1920+0 &
 # /usr/games/xsnow -nosanta &
 perl /home/sasai/local/bin/2chproxy.pl &
 
