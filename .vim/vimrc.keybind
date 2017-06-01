@@ -1,10 +1,5 @@
 autocmd FileType tweetvim	nmap	<buffer><silent>gg	gg<Plug>(tweetvim_action_reload)
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-nnoremap <F7>	:make<Return>:copen<Return>
-nnoremap <F8>	:cprevious<Return>
-nnoremap <F9>	:cnext<Return>
-nnoremap <F3>	:TlistToggle<CR>
 nnoremap bn		:bnext<CR>
 nnoremap bp		:bprev<CR>
 nnoremap bl		:buffers<CR>:buffer<Space>
@@ -27,6 +22,10 @@ nnoremap sL		<C-w>L
 nnoremap s+		<C-w>+
 nnoremap s-		<C-w>-
 nnoremap s=		<C-w>=
+
+" make
+nnoremap <C-m>a	:write<CR>:make<CR>
+nnoremap <C-m>c	:make clean<CR>
 
 " TweetVim実行時カーソル下のURLをブラウザで開く
 autocmd FileType tweetvim	nmap <Leader>o <Plug>(openbrowser-open)
