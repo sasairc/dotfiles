@@ -175,7 +175,7 @@ function swtmpdir() {
 
 function mntrng() {
 	test -f /var/log/rsync_backup.log	&& \
-		tail -f /var/log/rsync_backup.log
+		tail -f /var/log/rsync_backup.log &
 	clear
 	clbiff
 
