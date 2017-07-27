@@ -10,11 +10,21 @@ function set_tty_opts() {
 }
 
 function set_env_generic() {
+#	setopt VI
+	export PROMPT="%{${fg[red]}%}%n@%m%{${reset_color}%}%f [ %~ ] %h %# "
+
+	# history
+	export HISTFILE="${HOME}/._zsh_history"
 	export HISTSIZE=100000
 	export SAVEHIST=100000
-	export HISTFILE="${HOME}/._zsh_history"
-	export PROMPT="%{${fg[red]}%}%n@%m%{${reset_color}%}%f [ %~ ] %h %# "
 	export LESSHISTFILE=-
+	setopt HIST_IGNORE_DUPS
+	setopt HIST_IGNORE_ALL_DUPS
+	setopt HIST_IGNORE_SPACE
+	setopt HIST_SAVE_NO_DUPS
+	setopt HIST_FIND_NO_DUPS
+	setopt HIST_REDUCE_BLANKS
+	setopt HIST_NO_STORE
 
 	# エディタさん
 	test -f /usr/local/bin/vim				&& \
@@ -40,17 +50,19 @@ function set_env_generic() {
 
 function set_env_expath() {
 	export PATH="${PATH}:${HOME}/local/bin"
-	export LD_LIBRARY_PATH="/usr/local/lib:/lib:/lib64:/usr/lib:/usr/lib64:${HOME}/local/lib"
+#	export LD_LIBRARY_PATH="/usr/local/lib:/usr/local/lib64:/lib:/lib64:/usr/lib:/usr/lib64:${HOME}/local/lib"
+	export LD_LIBRARY_PATH="/lib:/lib64:/usr/local/lib:/usr/lib:/usr/lib64:${HOME}/local/lib"
 	export LD_RUN_PATH="${LD_LIBRARY_PATH}"
 	export RPATH="${LD_LIBRARY_PATH}"
 	export MANPATH="${MANPATH}:${HOME}/local/man"
+	export GST_PLUGIN_PATH="/usr/local/lib/gstreamer-0.10:/usr/lib/gstreamer-0.10"
 	export GHPROJ="${HOME}/Devel/git_sasairc"
 
 	return 0
 }
 
 function set_env_gcc_x86_64_flags() {
-	export DEB_BUILD_OPTIONS="parallel=3"
+	export DEB_BUILD_OPTIONS="parallel=5"
 	export CFLAGS="-Wall -O3 -m64 -march=core2 -mtune=core2 -mmmx -msse -msse2 -mssse3 -msse4.1 -fomit-frame-pointer -fbranch-probabilities -pipe"
 	export CXXFLAGS="${CFLAGS}"
 
@@ -58,7 +70,7 @@ function set_env_gcc_x86_64_flags() {
 }
 
 function set_env_gcc_armhf_flags () {
-	export DEB_BUILD_OPTIONS="parallel=3"
+	export DEB_BUILD_OPTIONS="parallel=5"
 	export CFLAGS="-O3 -march=armv8-a+crc -mtune=cortex-a53 -mfpu=crypto-neon-fp-armv8 -mfloat-abi=hard -ftree-vectorize -funsafe-math-optimizations -pipe"
 	export CXXFLAGS="${CFLAGS}"
 
@@ -162,7 +174,8 @@ function swtmpdir() {
 }
 
 function mntrng() {
-	tail -f /var/log/rsync_backup.log &
+	test -f /var/log/rsync_backup.log	&& \
+		tail -f /var/log/rsync_backup.log
 	clear
 	clbiff
 
@@ -178,10 +191,14 @@ set_tty_opts
 
 set_env_generic
 set_env_expath
-set_env_gcc_x86_64_flags
+set_env_clangsay
 set_env_perl5
 set_env_go
-set_env_clangsay
+
+test "${MACHTYPE}" = "x86_64"	&& \
+	set_env_gcc_x86_64_flags
+test "${MACHTYPE}" = "arm"	&& \
+	set_env_gcc_armhf_flags
 
 set_alias_generic
 set_alias_git
