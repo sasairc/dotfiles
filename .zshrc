@@ -49,7 +49,7 @@ function set_env_generic() {
 }
 
 function set_env_expath() {
-	export PATH="${PATH}:${HOME}/local/bin"
+	export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games:${HOME}/local/bin"
 #	export LD_LIBRARY_PATH="/usr/local/lib:/usr/local/lib64:/lib:/lib64:/usr/lib:/usr/lib64:${HOME}/local/lib"
 	export LD_LIBRARY_PATH="/lib:/lib64:/usr/local/lib:/usr/lib:/usr/lib64:${HOME}/local/lib"
 	export LD_RUN_PATH="${LD_LIBRARY_PATH}"
@@ -63,6 +63,9 @@ function set_env_expath() {
 
 function set_env_gcc_x86_64_flags() {
 	export DEB_BUILD_OPTIONS="parallel=5"
+	#
+	# -ffunction-sections -fdata-sections
+	#
 	export CFLAGS="-Wall -O3 -m64 -march=core2 -mtune=core2 -mmmx -msse -msse2 -mssse3 -msse4.1 -fomit-frame-pointer -fbranch-probabilities -pipe"
 	export CXXFLAGS="${CFLAGS}"
 
@@ -110,7 +113,7 @@ function set_alias_generic() {
 	alias ht="headtail --pretty"
 	alias ls="ls --color=auto"
 	alias open="${HOME}/local/bin/xdg-open"
-	alias fbterm="FONTCONFIG_FILE=~/.fonts.conf.fbterm fbterm --vesa-mode=379"
+	alias fbterm="FONTCONFIG_FILE=~/.fonts.conf.fbterm fbterm"
 	alias sudo="sudo "
 	alias paco="porg"
 	alias gtime="/usr/bin/time"
@@ -120,6 +123,7 @@ function set_alias_generic() {
 	alias zh="cat ${HOME}/._zsh_history"
 	alias sshs="ssh ssiserver.moe.hm -l sasai"
 	alias mbhead="mbhead -p"
+	alias w3m="w3m www.google.co.jp"
 
 	return 0
 }
@@ -159,6 +163,40 @@ function set_screen_proc_name() {
 	return 0
 }
 
+function switch_gcc_version_4() {
+	local GCC_PREFIX="/home/sasai/local"
+
+	test -f ${GCC_PREFIX}/bin/gcc -a -f ${GCC_PREFIX}/bin/g++	|| \
+		return 1
+
+	export PATH="${GCC_PREFIX}/bin:${PATH}"
+	export LD_LIBRARY_PATH="${GCC_PREFIX}/lib:${LD_LIBRARY_PATH}"
+
+	return 0
+}
+
+function switch_gcc_version_default() {
+	set_env_expath
+	set_env_perl5
+	set_env_go
+
+	return 0
+}
+
+function unset_gcc_optimize_envs() {
+	unset CFLAGS CXXFLAGS
+	unset RPATH LD_LIBRARY_PATH LD_RUN_PATH
+
+	return 0
+}
+
+function set_ld_preload_libsegfault() {
+	export LD_PRELOAD="/lib/x86_64-linux-gnu/libSegFault.so"
+	export SEGFAULT_SIGNALS="all"
+
+	return 0
+}
+
 function precmd() {
 	# xterm利用時のタイトル
 	print -Pn "\e]0;[${USER}@${HOST}] %~\a"
@@ -178,6 +216,13 @@ function mntrng() {
 		tail -f /var/log/rsync_backup.log &
 	clear
 	clbiff
+
+	return 0
+}
+
+function swapon() {
+	test -f /home/sasai/local/tmp/swap.img	&& \
+		sudo swapon /home/sasai/local/tmp/swap.img
 
 	return 0
 }
