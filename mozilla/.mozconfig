@@ -1,28 +1,26 @@
-mk_add_options MOZ_OBJDIR="/home/sasai/local/src/seamonkey/2.40/seamonkey-2.40/suite_mybuild"
-mk_add_options PROFILE_GEN_SCRIPT='$(MAKE) -C $(MOZ_OBJDIR) pgo-profile-run'
+# .mozconfig
+mk_add_options MOZ_OBJDIR="@TOPSRCDIR@/suite_mybuild"
 mk_add_options MOZ_CO_PROJECT="suite"
 mk_add_options MOZ_MAKE_FLAGS="-j5"
 
 ac_add_options --prefix=/usr/local
-ac_add_options --enable-application=suite
-ac_add_options --enable-default-toolkit=cairo-gtk2
-ac_add_options --enable-optimaize="-Wall -O3 -m64 -march=core2 -mtune=core2 -mmmx -msse -msse2 -mssse3 -msse4.1 -fomit-frame-pointer -fbranch-probabilities -pipe -fprofile-use -fprofile-correction -Wcoverage-mismatch"
-ac_add_options --enable-xft
-ac_add_options --enable-xinerama
-ac_add_options --enable-storage
-ac_add_options --enable-gstreamer
+ac_add_options --enable-application="suite"
+ac_add_options --enable-default-toolkit="cairo-gtk2"
+#ac_add_options --enable-optimize="-Os -m64 -march=core2 -mtune=core2 -mmmx -msse -msse2 -mssse3 -msse4.1 -flifetime-dse=1 -fno-delete-null-pointer-checks -fno-strict-aliasing -ffunction-sections -fdata-sections -fomit-frame-pointer -fbranch-probabilities -pthread -pipe"
+ac_add_options --enable-optimize="-O2 -m64 -march=core2 -mtune=core2 -mmmx -msse -msse2 -mssse3 -msse4.1 -flifetime-dse=1 -fno-delete-null-pointer-checks -ffunction-sections -fdata-sections -fomit-frame-pointer -fbranch-probabilities -pipe"
 
+ac_add_options --enable-js-shell
+ac_add_options --enable-elf-hack
+
+ac_add_options --disable-jemalloc
 ac_add_options --disable-debug
 ac_add_options --disable-debug-symbols
 ac_add_options --disable-crashreporter
 ac_add_options --disable-updater
 ac_add_options --disable-gnomeui
-ac_add_options --disable-jsd
-ac_add_options --disable-mailnews
-ac_add_options --disable-composer
 ac_add_options --disable-accessibility
-ac_add_options --disable-gnomevfs
 ac_add_options --disable-printing
+ac_add_options --disable-synth-speechd
 ac_add_options --disable-websms-backend
 ac_add_options --disable-ldap
 ac_add_options --disable-webrtc
