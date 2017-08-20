@@ -11,7 +11,7 @@ if filereadable(expand('$HOME/.vim/vimrc.keybind'))
 endif
 
 if filereadable(expand('$HOME/.vim/vimrc.tweetvim'))
-	source $HOME/.vim/vimrc.tweetvim 	" Load vimrc.tweetvim
+	source $HOME/.vim/vimrc.tweetvim	" Load vimrc.tweetvim
 endif
 
 if filereadable(expand('$HOME/.vim/vimrc.local'))
@@ -51,3 +51,6 @@ set completeopt=longest,menuone
 
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 50
+
+command Exp :set expandtab|:retab
+command Uexp :set noexpandtab|:retab!

@@ -25,7 +25,7 @@ let g:clang_complete_auto=1
 "Setting clang and libclang.so path
 let g:clang_exec="/usr/bin/clang"
 let g:clang_use_library=1
-" let g:clang_library_path="/usr/lib/libclang.so"
+let g:clang_library_path="/usr/lib/llvm-3.9/lib/libclang.so.1"
 
 "Let Neobundle manage unite
 NeoBundle "Shougo/unite.vim"
