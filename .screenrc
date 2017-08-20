@@ -36,20 +36,20 @@ windowlist string '%{.g}%3n %{.y}%f%09=%{-} %t %016=%h %='
 bind q quit
 
 # ウィンドウリスト関連のキー設定
-bind ^L				windowlist -b
-bind ^N				eval 'next' 'command -c select'
-bind ^P 			eval 'prev' 'command -c select'
-bind -c select ^N 	eval 'next -c select'
-bind -c select ^P	eval 'next -c select'
+bind ^L             windowlist -b
+bind ^N             eval 'next' 'command -c select'
+bind ^P             eval 'prev' 'command -c select'
+bind -c select ^N   eval 'next -c select'
+bind -c select ^P   eval 'next -c select'
 
 # ウィンドウのリサイズについて
 bind e eval 'command -c resize' 'echo "Resize window"'
 bind ^e eval 'command -c resize' 'echo "Resize window"'
-bind -c resize h	eval 'command -c resize' 'resize -h -1'
-bind -c resize l	eval 'command -c resize' 'resize -h +1'
-bind -c resize j	eval 'command -c resize' 'resize -v +1'
-bind -c resize k	eval 'command -c resize' 'resize -v -1'
-bind -c resize ^h	eval 'command -c resize' 'resize -h -1'
-bind -c resize ^l	eval 'command -c resize' 'resize -h +1'
-bind -c resize ^j	eval 'command -c resize' 'resize -v +1'
-bind -c resize ^k	eval 'command -c resize' 'resize -v -1'
+bind -c resize h    eval 'command -c resize' 'resize -h -1'
+bind -c resize l    eval 'command -c resize' 'resize -h +1'
+bind -c resize j    eval 'command -c resize' 'resize -v +1'
+bind -c resize k    eval 'command -c resize' 'resize -v -1'
+bind -c resize ^h   eval 'command -c resize' 'resize -h -1'
+bind -c resize ^l   eval 'command -c resize' 'resize -h +1'
+bind -c resize ^j   eval 'command -c resize' 'resize -v +1'
+bind -c resize ^k   eval 'command -c resize' 'resize -v -1'

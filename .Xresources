@@ -1,4 +1,4 @@
-urxvt*preeditType:	OffTheSpot
+urxvt*preeditType:  OffTheSpot
 urxvt*termName: rxvt-256color
 
 urxvt*font: xft:Inconsolata:pixelsize=14
@@ -6,6 +6,8 @@ urxvt*mfont: -jis-fixed-medium-*-*-*-16-*-*-*-*-*-*-*
 
 urxvt*foreground:  #008000
 urxvt*background:  #000000
+; urxvt*foreground:  #ffd700
+; urxvt*background:  #cc0000
 urxvt*color0:      #2e3436
 urxvt*color1:      #cc0000
 urxvt*color2:      #4e9a06
@@ -23,5 +25,5 @@ urxvt*color13:     #ad7fa8
 urxvt*color14:     #34e2e2
 urxvt*color15:     #eeeeec
 
-URxvt*shading: 16
+URxvt*shading: 8
 URxvt*inheritPixmap: True
