@@ -1,5 +1,5 @@
 if has('vim_starting')
-	set runtimepath+=~/.vim/neobundle/neobundle.vim/
+    set runtimepath+=~/.vim/neobundle/neobundle.vim/
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
@@ -52,5 +52,5 @@ NeoBundle "kannokanno/previm"
 
 "Let Neobundle manage vimsay
 NeoBundle "844196/vimsay", {
-	\ 'depends': 'Shougo/unite.vim'
-	\ }
+    \ 'depends': 'Shougo/unite.vim'
+    \ }

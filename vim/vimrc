@@ -1,21 +1,21 @@
 if filereadable(expand('$HOME/.vim/vimrc.visual'))
-	source $HOME/.vim/vimrc.visual	" Loading vimrc.visual
+    source $HOME/.vim/vimrc.visual  " Loading vimrc.visual
 endif
 
 if filereadable(expand('$HOME/.vim/vimrc.neobundle'))
-	source $HOME/.vim/vimrc.neobundle	" Load vimrc.neobundle
+    source $HOME/.vim/vimrc.neobundle   " Load vimrc.neobundle
 endif
 
 if filereadable(expand('$HOME/.vim/vimrc.keybind'))
-	source $HOME/.vim/vimrc.keybind		" Load vimrc.keybind
+    source $HOME/.vim/vimrc.keybind     " Load vimrc.keybind
 endif
 
 if filereadable(expand('$HOME/.vim/vimrc.tweetvim'))
-	source $HOME/.vim/vimrc.tweetvim	" Load vimrc.tweetvim
+    source $HOME/.vim/vimrc.tweetvim    " Load vimrc.tweetvim
 endif
 
 if filereadable(expand('$HOME/.vim/vimrc.local'))
-	source $HOME/.vim/vimrc.local		" Load vimrc.local
+    source $HOME/.vim/vimrc.local       " Load vimrc.local
 endif
 
 set nocp

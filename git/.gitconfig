@@ -1,0 +1,9 @@
+[core]
+	excludesfile = /home/sasai/.git/gitignore
+	editor = vim
+	pager = less
+[user]
+	email = sasairc@ssiserver.moe.hm
+	name = sasairc
+[color]
+	ui = auto
