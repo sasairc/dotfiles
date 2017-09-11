@@ -1,11 +1,4 @@
-ifndef	ROOTDIR
-ROOTDIR = ${HOME}
-# ROOTDIR
-endif
-ifndef	VIMROOT
-VIMROOT	= $(ROOTDIR)/.vim
-# VIMROOT
-endif
+include ../../config.mk
 
 init-make.vim: make.vim
 	install -pd $(VIMROOT)/ftplugin

@@ -1,6 +1,4 @@
-ifndef	ZSH_FPATH
-ZSH_FPATH	= $(ROOTDIR)/.zsh/completions
-endif
+include ../../config.mk
 
 init-clangsay: _clangsay
 	install -pd $(ZSH_FPATH)
