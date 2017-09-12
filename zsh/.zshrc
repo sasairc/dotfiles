@@ -57,7 +57,7 @@ function set_env_expath() {
     export RPATH="${LD_LIBRARY_PATH}"
     export MANPATH="${MANPATH}:${HOME}/local/man"
     export GST_PLUGIN_PATH="/usr/local/lib/gstreamer-0.10:/usr/lib/gstreamer-0.10"
-    export GHPROJ="${HOME}/Devel/git_sasairc"
+    export GHPROJ="${HOME}/Devel/github.com/sasairc"
 
     return 0
 }
@@ -94,7 +94,7 @@ function set_env_perl5() {
 
 function set_env_go() {
     export GOROOT="${HOME}/local/lib/go"
-    export GOPATH="${GHPROJ}/go"
+    export GOPATH="${HOME}/Devel/go"
     export PATH="${PATH}:${GOROOT}/bin"
 
     return 0
