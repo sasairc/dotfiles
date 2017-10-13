@@ -125,6 +125,7 @@ function set_alias_generic() {
     alias sshs="ssh ssiserver.moe.hm -l sasai"
     alias mbhead="mbhead -p"
     alias w3m="w3m www.google.co.jp"
+    alias debuild="test -d ./debian && dpkg-buildpackage -us -uc -d && fakeroot ./debian/rules clean && mv debian .."
 
     return 0
 }
