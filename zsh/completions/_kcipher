@@ -1,0 +1,14 @@
+#compdef kcipher
+
+function _kcipher() {
+    _arguments -s : \
+        {-e,--encode}'[encode K-cipher (default)]' \
+        {-d,--decode}'[decode K-cipher]' \
+        {-s,--seed}'[specify seed string]':keyword \
+        {-m,--delimiter}'[specify delimiter string]':keyword \
+        {-h,--help}'[display help and exit]' \
+        {-v,--version}'[output version information and exit]' \
+        '*:files:_files'
+}
+
+_kcipher

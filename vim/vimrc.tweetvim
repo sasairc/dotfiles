@@ -1,0 +1,34 @@
+nnoremap th :TweetVimHomeTimeline<CR>
+nnoremap tm :TweetVimMentions<CR>
+nnoremap ts :TweetVimSay<CR>
+nnoremap tc :<C-u>TweetVimCommandSay<Space>
+
+autocmd FileTYpe tweetvim nnoremap  <buffer>s   :<C-u>TweetVimSay<CR>
+autocmd FileType tweetvim nnoremap  <buffer>c   :<C-u>TweetVimCommandSay<Space>
+autocmd FileType tweetvim nnoremap  <buffer>m   :<C-u>TweetVimMentions<<CR>
+autocmd FileType tweetvim map       <buffer>rt  <Plug>(tweetvim_action_retweet)
+
+" アイコンを表示
+let g:tweetvim_display_icon = 1
+" 最上部にカーソル移動したらリロード
+autocmd FileType tweetvim   nmap    <buffer><silent>gg  gg<Plug>(tweetvim_action_reload)
+" ページ毎に表示する件数
+let g:tweetvim_tweet_per_page = 60
+
+" セパレータを飛ばして移動する
+" ページの先頭や末尾でそれ以上 上/下 に移動しようとしたらページ移動する
+function! s:tweetvim_vertical_move(cmd)
+    execute "normal! ".a:cmd
+    let end = line('$')
+    while getline('.') =~# '^[-~]\+$' && line('.') != end
+        execute "normal! ".a:cmd
+    endwhile
+
+    " 一番下まで来たら次のページに進む
+    let line = line('.')
+    if line == end
+        call feedkeys("\<Plug>(tweetvim_action_page_next)")
+    elseif line == 1
+        call feedkeys("\<Plug>(tweetvim_action_page_previous)")
+    endif
+endfunction

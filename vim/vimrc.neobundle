@@ -1,0 +1,56 @@
+if has('vim_starting')
+    set runtimepath+=~/.vim/neobundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+"Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+"add plugins
+filetype plugin on
+NeoBundleCheck
+
+"Install neocomplcache
+NeoBundle 'https://github.com/Shougo/neocomplcache.git'
+NeoBundle 'https://github.com/Shougo/neocomplcache-clang_complete.git'
+NeoBundle 'https://github.com/Rip-Rip/clang_complete.git'
+
+"Enable neocomplcache
+let g:neocomplcache_enable_at_startup=1
+
+let g:neocomplcache_force_overwrite_completefunc=1
+let g:clang_complete_auto=1
+
+"Setting clang and libclang.so path
+let g:clang_exec="/usr/bin/clang"
+let g:clang_use_library=1
+let g:clang_library_path="/usr/lib/llvm-3.9/lib/libclang.so.1"
+
+"Let Neobundle manage unite
+NeoBundle "Shougo/unite.vim"
+
+"Let Neobundle manage vimfiler
+NeoBundle "Shougo/vimfiler"
+
+"Let Neobundle manage vimproc
+NeoBundle "https://github.com/Shougo/vimproc"
+
+"Let Neobundle manage vimshell
+NeoBundle "https://github.com/Shougo/vimshell.git"
+
+"Let Neobundle manage tweetvim
+NeoBundle "basyura/TweetVim"
+NeoBundle "mattn/webapi-vim"
+NeoBundle "basyura/twibill.vim"
+NeoBundle "h1mesuke/unite-outline"
+NeoBundle "basyura/bitly.vim"
+NeoBundle "Shougo/unite.vim"
+
+" Let Neobundle manage previm(*.md Preview)
+NeoBundle "kannokanno/previm"
+
+"Let Neobundle manage vimsay
+NeoBundle "844196/vimsay", {
+    \ 'depends': 'Shougo/unite.vim'
+    \ }
