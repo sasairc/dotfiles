@@ -126,6 +126,7 @@ function set_alias_generic() {
     alias mbhead="mbhead -p"
     alias w3m="w3m www.google.co.jp"
     alias debuild="test -d ./debian && dpkg-buildpackage -us -uc -d && fakeroot ./debian/rules clean && mv debian .."
+    alias vlc="LD_LIBRARY_PATH=${HOME}/local/lib:/usr/local/lib:/lib:/lib64:/usr/lib:/usr/lib64 vlc"
 
     return 0
 }
