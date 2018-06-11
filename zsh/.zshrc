@@ -100,6 +100,23 @@ function set_env_go() {
     return 0
 }
 
+function set_env_cuda() {
+    export PATH="${PATH}:${HOME}/local/opt/cuda-6.5/bin"
+    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${HOME}/local/opt/cuda-6.5/lib64"
+
+    return 0
+}
+
+function set_env_pgi() {
+    export  PGI="/home/sasai/local/opt/pgi"
+    export  PGI_RELEASE="2018"
+    export  PGI_ARCH="linux86-64"
+    export  PATH="${PGI}/${PGI_ARCH}/${PGI_RELEASE}/bin:${PGI}/${PGI_ARCH}/${PGI_RELEASE}/mpi/mpenmpi/bin:${PATH}"
+    export  LM_LICENSE_FILE="${PGI}/license.dat"
+
+    return 0
+}
+
 function set_env_clangsay() {
     export COWPATH="/usr/share/clangsay/cows:${GHPROJ}/my_cows"
     export DEFAULT_COWFILE="yasuna_09"
@@ -122,7 +139,8 @@ function set_alias_generic() {
     alias fep="uim-fep"
     alias rl="source ${HOME}/.zshrc"
     alias zh="history -i -E 1"
-    alias sshs="ssh ssiserver.moe.hm -l sasai"
+    alias sshs="ssh sasai@dentaku.ssiserver.moe.hm -i ~/.ssh/id_rsa_Dentaku"
+    alias sshss="ssh sasai@robots.ssiserver.moe.hm -i ~/.ssh/id_rsa_Robots"
     alias mbhead="mbhead -p"
     alias w3m="w3m www.google.co.jp"
     alias debuild="test -d ./debian && dpkg-buildpackage -us -uc -d && fakeroot ./debian/rules clean && mv debian .."
@@ -243,6 +261,7 @@ set_env_expath
 set_env_clangsay
 set_env_perl5
 set_env_go
+set_env_cuda
 
 test "${MACHTYPE}" = "x86_64"   && \
     set_env_gcc_x86_64_flags
