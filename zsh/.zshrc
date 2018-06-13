@@ -51,7 +51,7 @@ function set_env_generic() {
 
 function set_env_expath() {
     export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games:${HOME}/local/bin"
-#   export LD_LIBRARY_PATH="/usr/local/lib:/usr/local/lib64:/lib:/lib64:/usr/lib:/usr/lib64:${HOME}/local/lib"
+    export LD_LIBRARY_PATH="/usr/local/lib:/usr/local/lib64:/lib:/lib64:/usr/lib:/usr/lib64:${HOME}/local/lib"
     export LD_LIBRARY_PATH="/lib:/lib64:/usr/local/lib:/usr/lib:/usr/lib64:${HOME}/local/lib"
     export LD_RUN_PATH="${LD_LIBRARY_PATH}"
     export RPATH="${LD_LIBRARY_PATH}"
@@ -269,7 +269,7 @@ set_env_cuda
 
 test "${MACHTYPE}" = "x86_64"   && \
     set_env_gcc_x86_64_flags
-test "${MACHTYPE}" = "arm"  && \
+test "${MACHTYPE}" = "armv7l"  && \
     set_env_gcc_armhf_flags
 
 set_alias_generic
