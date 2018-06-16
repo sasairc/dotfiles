@@ -108,13 +108,13 @@ function set_env_cuda() {
 }
 
 function set_env_pgi() {
-	export  PGI="/home/sasai/local/opt/pgi"
-	export  PGI_RELEASE="2018"
-	export  PGI_ARCH="linux86-64"
-	export  PATH="${PGI}/${PGI_ARCH}/${PGI_RELEASE}/bin:${PGI}/${PGI_ARCH}/${PGI_RELEASE}/mpi/mpenmpi/bin:${PATH}"
-	export  LM_LICENSE_FILE="${PGI}/license.dat"
+    export  PGI="/home/sasai/local/opt/pgi"
+    export  PGI_RELEASE="2018"
+    export  PGI_ARCH="linux86-64"
+    export  PATH="${PGI}/${PGI_ARCH}/${PGI_RELEASE}/bin:${PGI}/${PGI_ARCH}/${PGI_RELEASE}/mpi/mpenmpi/bin:${PATH}"
+    export  LM_LICENSE_FILE="${PGI}/license.dat"
 
-	return 0
+    return 0
 }
 
 function set_env_clangsay() {
@@ -142,11 +142,12 @@ function set_alias_generic() {
     alias sshs="ssh sasai@dentaku.ssiserver.moe.hm -i ~/.ssh/id_rsa_Dentaku"
     alias sshss="ssh sasai@robots.ssiserver.moe.hm -i ~/.ssh/id_rsa_Robots"
     alias sshsss="ssh sasai@aerodynamik.ssiserver.moe.hm -i ~/.ssh/id_rsa_Aerodynamik"
-	alias acssh="cssh sasai@dentaku.ssiserver.moe.hm sasai@robots.ssiserver.moe.hm sasai@aerodynamik.ssiserver.moe.hm"
+    alias sshssss="ssh sasai@mitternacht.ssiserver.moe.hm -i ~/.ssh/id_rsa_Mitternacht"
+    alias acssh="cssh sasai@dentaku.ssiserver.moe.hm sasai@robots.ssiserver.moe.hm sasai@aerodynamik.ssiserver.moe.hm sasai@mitternacht.ssiserver.moe.hm"
     alias mbhead="mbhead -p"
     alias w3m="w3m www.google.co.jp"
-	alias clusterssh="PERL5LIB="" clusterssh"
-	alias cssh="PERL5LIB="" cssh"
+    alias clusterssh="PERL5LIB="" clusterssh"
+    alias cssh="PERL5LIB="" cssh"
     alias debuild="test -d ./debian && dpkg-buildpackage -us -uc -d && fakeroot ./debian/rules clean && mv debian .."
     alias vlc="LD_LIBRARY_PATH=${HOME}/local/lib:/usr/local/lib:/lib:/lib64:/usr/lib:/usr/lib64 vlc"
 
