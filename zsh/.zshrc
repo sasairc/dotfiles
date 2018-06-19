@@ -62,10 +62,22 @@ function set_env_expath() {
     return 0
 }
 
+function set_env_hosts() {
+    export DOMAIN="ssiserver.moe.hm"
+    export DENTAKU="dentaku.${DOMAIN}"
+    export NUMMERN="nummern.${DOMAIN}"
+    export COMPUTERWELT="computerwelt.${DOMAIN}"
+    export COMPUTERWELT2="computerwelt2.${DOMAIN}"
+    export AERODYNAMIK="aerodynamik.${DOMAIN}"
+    export ROBOTS="robots.${DOMAIN}"
+
+    return 0
+}
+
 function set_env_gcc_x86_64_flags() {
     export DEB_BUILD_OPTIONS="parallel=5"
     #
-    # -ffunction-sections -fdata-sections
+    # Intel Core2 Quad Q9400 processor
     #
     export CFLAGS="-Wall -O3 -m64 -march=core2 -mtune=core2 -mmmx -msse -msse2 -mssse3 -msse4.1 -fomit-frame-pointer -fbranch-probabilities -pipe"
     export CXXFLAGS="${CFLAGS}"
@@ -75,7 +87,16 @@ function set_env_gcc_x86_64_flags() {
 
 function set_env_gcc_armhf_flags () {
     export DEB_BUILD_OPTIONS="parallel=5"
-    export CFLAGS="-O3 -march=armv8-a+crc -mtune=cortex-a53 -mfpu=crypto-neon-fp-armv8 -mfloat-abi=hard -ftree-vectorize -funsafe-math-optimizations -pipe"
+    #
+    # ARM v7 Cortex-a53 processor
+    #
+    #export CFLAGS="-Wall -O3 -mcpu=cortex-a7 -march=armv7-a -mtune=cortex-a7 -mfloat-abi=hard -mfpu=neon-vfpv4 -fforce-addr -pipe"
+    #export CXXFLAGS="${CFLAGS}"
+
+    #
+    # ARM v8 Cortex-A53 processor
+    #
+    export CFLAGS="-Wall -O3 -mcpu=cortex-a53 -march=armv8-a+crc -mtune=cortex-a53 -mfloat-abi=hard -mfpu=neon-fp-armv8 -fforce-addr -pipe"
     export CXXFLAGS="${CFLAGS}"
 
     return 0
@@ -108,7 +129,7 @@ function set_env_cuda() {
 }
 
 function set_env_pgi() {
-    export  PGI="/home/sasai/local/opt/pgi"
+    export  PGI="${HOME}/local/opt/pgi"
     export  PGI_RELEASE="2018"
     export  PGI_ARCH="linux86-64"
     export  PATH="${PGI}/${PGI_ARCH}/${PGI_RELEASE}/bin:${PGI}/${PGI_ARCH}/${PGI_RELEASE}/mpi/mpenmpi/bin:${PATH}"
@@ -128,6 +149,7 @@ function set_alias_generic() {
     alias ..="cd .."
     alias v="vim"
     alias sc="screen"
+    alias sr="screen -r"
     alias ht="headtail --pretty"
     alias ls="ls --color=auto"
     alias open="${HOME}/local/bin/xdg-open"
@@ -139,15 +161,8 @@ function set_alias_generic() {
     alias fep="uim-fep"
     alias rl="source ${HOME}/.zshrc"
     alias zh="history -i -E 1"
-    alias sshs="ssh sasai@dentaku.ssiserver.moe.hm -i ~/.ssh/id_rsa_Dentaku"
-    alias sshss="ssh sasai@robots.ssiserver.moe.hm -i ~/.ssh/id_rsa_Robots"
-    alias sshsss="ssh sasai@aerodynamik.ssiserver.moe.hm -i ~/.ssh/id_rsa_Aerodynamik"
-    alias sshssss="ssh sasai@mitternacht.ssiserver.moe.hm -i ~/.ssh/id_rsa_Mitternacht"
-    alias acssh="cssh sasai@dentaku.ssiserver.moe.hm sasai@robots.ssiserver.moe.hm sasai@aerodynamik.ssiserver.moe.hm sasai@mitternacht.ssiserver.moe.hm"
     alias mbhead="mbhead -p"
     alias w3m="w3m www.google.co.jp"
-    alias clusterssh="PERL5LIB="" clusterssh"
-    alias cssh="PERL5LIB="" cssh"
     alias debuild="test -d ./debian && dpkg-buildpackage -us -uc -d && fakeroot ./debian/rules clean && mv debian .."
     alias vlc="LD_LIBRARY_PATH=${HOME}/local/lib:/usr/local/lib:/lib:/lib64:/usr/lib:/usr/lib64 vlc"
 
@@ -164,6 +179,25 @@ function set_alias_git() {
     alias l="git log --decorate=full --graph --color"
     alias m="git merge --no-ff"
     alias mf="git submodule foreach git pull origin master"
+
+    return 0
+}
+
+function set_alias_ssh() {
+    alias ssh1="ssh ${DENTAKU}"
+    alias ssh2="ssh ${NUMMERN}"
+    alias ssh3="ssh ${COMPUTERWELT}"
+    alias ssh4="ssh ${COMPUTERWELT2}"
+    alias ssh5="ssh ${AERODYNAMIK}"
+    alias ssh6="ssh ${ROBOTS}"
+
+    return 0
+}
+
+function set_alias_cssh() {
+    alias clusterssh="PERL5LIB=\"\" clusterssh"
+    alias cssh="PERL5LIB=\"\" cssh"
+    alias acssh="PERL5LIB=\"\" cssh ${DENTAKU} ${NUMMERN} ${COMPUTERWELT} ${COMPUTERWELT2} ${AERODYNAMIK} ${ROBOTS}"
 
     return 0
 }
@@ -191,7 +225,7 @@ function set_screen_proc_name() {
 }
 
 function switch_gcc_version_4() {
-    local GCC_PREFIX="/home/sasai/local"
+    local GCC_PREFIX="${HOME}/local"
 
     test -f ${GCC_PREFIX}/bin/gcc -a -f ${GCC_PREFIX}/bin/g++   || \
         return 1
@@ -248,8 +282,8 @@ function mntrng() {
 }
 
 function swapon() {
-    test -f /home/sasai/local/tmp/swap.img  && \
-        sudo swapon /home/sasai/local/tmp/swap.img
+    test -f ${HOME}/local/tmp/swap.img  && \
+        sudo swapon ${HOME}/local/tmp/swap.img
 
     return 0
 }
@@ -267,6 +301,7 @@ set_env_clangsay
 set_env_perl5
 set_env_go
 set_env_cuda
+set_env_hosts
 
 test "${MACHTYPE}" = "x86_64"   && \
     set_env_gcc_x86_64_flags
@@ -275,6 +310,8 @@ test "${MACHTYPE}" = "armv7l"  && \
 
 set_alias_generic
 set_alias_git
+set_alias_ssh
+set_alias_cssh
 
 set_zsh_misc_opts
 set_screen_proc_name
