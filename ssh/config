@@ -1,0 +1,24 @@
+Host dentaku.ssiserver.moe.hm
+    HostName        dentaku.ssiserver.moe.hm
+    IdentityFile    ~/.ssh/id_rsa_Dentaku
+    User            sasai
+Host nummern.ssiserver.moe.hm
+    HostName        nummern.ssiserver.moe.hm
+    IdentityFile    ~/.ssh/id_rsa_Nummern
+    User            sasai
+Host computerwelt.ssiserver.moe.hm
+    HostName        computerwelt.ssiserver.moe.hm
+    IdentityFile    ~/.ssh/id_rsa_Computerwelt
+    User            sasai
+Host computerwelt2.ssiserver.moe.hm
+    HostName        computerwelt2.ssiserver.moe.hm
+    IdentityFile    ~/.ssh/id_rsa_Computerwelt2
+    User            sasai
+Host aerodynamik.ssiserver.moe.hm
+    HostName        aerodynamik.ssiserver.moe.hm
+    identityfile    ~/.ssh/id_rsa_Aerodynamik
+    User            sasai
+Host robots.ssiserver.moe.hm
+    HostName        robots.ssiserver.moe.hm
+    identityfile    ~/.ssh/id_rsa_Robots
+    User            sasai
