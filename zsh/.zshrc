@@ -70,6 +70,7 @@ function set_env_hosts() {
     export COMPUTERWELT2="computerwelt2.${DOMAIN}"
     export AERODYNAMIK="aerodynamik.${DOMAIN}"
     export ROBOTS="robots.${DOMAIN}"
+    export COMPUTERLIEBE="computerliebe.${DOMAIN}"
 
     return 0
 }
@@ -183,21 +184,10 @@ function set_alias_git() {
     return 0
 }
 
-function set_alias_ssh() {
-    alias ssh1="ssh ${DENTAKU}"
-    alias ssh2="ssh ${NUMMERN}"
-    alias ssh3="ssh ${COMPUTERWELT}"
-    alias ssh4="ssh ${COMPUTERWELT2}"
-    alias ssh5="ssh ${AERODYNAMIK}"
-    alias ssh6="ssh ${ROBOTS}"
-
-    return 0
-}
-
 function set_alias_cssh() {
     alias clusterssh="PERL5LIB=\"\" clusterssh"
     alias cssh="PERL5LIB=\"\" cssh"
-    alias acssh="PERL5LIB=\"\" cssh ${DENTAKU} ${NUMMERN} ${COMPUTERWELT} ${COMPUTERWELT2} ${AERODYNAMIK} ${ROBOTS}"
+    alias acssh="PERL5LIB=\"\" cssh ${DENTAKU} ${NUMMERN} ${COMPUTERWELT} ${COMPUTERWELT2} ${AERODYNAMIK} ${ROBOTS} ${COMPUTERLIEBE}"
 
     return 0
 }
@@ -288,6 +278,20 @@ function swapon() {
     return 0
 }
 
+function temp_of_servers() {
+    local CMD="local/bin/temp"
+
+    echo "dentaku:       $(ssh ${DENTAKU} ${CMD})"
+    echo "nummern:       $(ssh ${NUMMERN} ${CMD})"
+    echo "computerwelt:  $(ssh ${COMPUTERWELT} ${CMD})"
+    echo "computerwelt2: $(ssh ${COMPUTERWELT2} ${CMD})"
+    echo "aerodynamik:   $(ssh ${AERODYNAMIK} ${CMD})"
+    echo "robots:        $(ssh ${ROBOTS} ${CMD})"
+    echo "computerliebe: $(ssh ${COMPUTERLIEBE} ${CMD})"
+
+    return 0
+}
+
 #function command_not_found_handler() {
     # 煽り
 #   yasuna -n 1896 | sed -e "s/財布/ \$PATH /g" -e "s/何も/ $0 が/g"
@@ -310,7 +314,6 @@ test "${MACHTYPE}" = "armv7l"  && \
 
 set_alias_generic
 set_alias_git
-set_alias_ssh
 set_alias_cssh
 
 set_zsh_misc_opts
