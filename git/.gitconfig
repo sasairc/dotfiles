@@ -1,9 +1,13 @@
 [core]
-	excludesfile = /home/sasai/.git/gitignore
-	editor = vim
-	pager = less
+    excludesfile = /home/sasai/.git/gitignore
+    editor = vim
+    pager = less
 [user]
-	email = sasairc@ssiserver.moe.hm
-	name = sasairc
+    email = sasairc@ssiserver.moe.hm
+    name = sasairc
 [color]
-	ui = auto
+    ui = auto
+#   diff = always
+[url "github:"]
+    InsteadOf = https://github.com/
+    InsteadOf = git@github.com:
