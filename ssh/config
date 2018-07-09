@@ -22,3 +22,12 @@ Host robots.ssiserver.moe.hm
     HostName        robots.ssiserver.moe.hm
     identityfile    ~/.ssh/id_rsa_Robots
     User            sasai
+Host computerliebe.ssiserver.moe.hm
+    HostName        computerliebe.ssiserver.moe.hm
+    identityfile    ~/.ssh/id_rsa_Computerliebe
+    User            sasai
+
+Host github github.com
+    HostName        github.com
+    IdentityFile    ~/.ssh/id_rsa_Github
+    User            git
