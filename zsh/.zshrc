@@ -62,6 +62,17 @@ function set_env_expath() {
     return 0
 }
 
+function set_env_termux() {
+    export PREFIX="/data/data/com.termux/files/usr"
+    export PATH="${PREFIX}/local/bin:${PREFIX}/bin:${PREFIX}/bin/applets:${PATH}"
+    export LD_LIBRARY_PATH="${PREFIX}/local/lib:${PREFIX}/lib:${LD_LIBRARY_PATH}"
+    export INCLUDE="${PREFIX}/local/include:${INCLUDE}"
+
+    unset LD_PRELOAD
+
+    return 0
+}
+
 function set_env_hosts() {
     export DOMAIN="ssiserver.moe.hm"
     export DENTAKU="dentaku.${DOMAIN}"
