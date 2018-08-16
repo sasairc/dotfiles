@@ -43,7 +43,7 @@ function set_env_generic() {
         export LANG="ja_JP.UTF-8"
     else
         export LANG="C"
-        setterm --blank 0
+        #setterm --blank 0
     fi
 
     return 0
@@ -69,6 +69,7 @@ function set_env_termux() {
     export LD_LIBRARY_PATH="${PREFIX_LOCAL}/lib:${PREFIX}/lib"
     export MANPATH="${PREFIX_LOCAL}/share/man:${PREFIX}/share/man"
     export INCLUDE="${PREFIX_LOCAL}/include"
+    export GHPROJ="${HOME}/Devel/github.com/sasairc"
 
     unset LD_PRELOAD
 
@@ -153,7 +154,7 @@ function set_env_pgi() {
 }
 
 function set_env_clangsay() {
-    export COWPATH="/usr/share/clangsay/cows:${GHPROJ}/my_cows"
+    #export COWPATH="/usr/share/clangsay/cows:${GHPROJ}/my_cows"
     export DEFAULT_COWFILE="yasuna_09"
 
     return 0
@@ -313,12 +314,13 @@ function temp_of_servers() {
 set_tty_opts
 
 set_env_generic
-set_env_expath
+#set_env_expath
+set_env_termux
 set_env_clangsay
-set_env_perl5
-set_env_go
-set_env_cuda
-set_env_hosts
+#set_env_perl5
+#set_env_go
+#set_env_cuda
+#set_env_hosts
 
 test "${MACHTYPE}" = "x86_64"   && \
     set_env_gcc_x86_64_flags
