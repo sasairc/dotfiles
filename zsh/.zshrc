@@ -69,6 +69,7 @@ function set_env_termux() {
     export LD_LIBRARY_PATH="${PREFIX_LOCAL}/lib:${PREFIX}/lib"
     export MANPATH="${PREFIX_LOCAL}/share/man:${PREFIX}/share/man"
     export INCLUDE="${PREFIX_LOCAL}/include"
+    export GHPROJ="${HOME}/Devel/github.com/sasairc"
 
     unset LD_PRELOAD
 
@@ -143,11 +144,19 @@ function set_env_cuda() {
 }
 
 function set_env_pgi() {
-    export  PGI="${HOME}/local/opt/pgi"
-    export  PGI_RELEASE="2018"
-    export  PGI_ARCH="linux86-64"
-    export  PATH="${PGI}/${PGI_ARCH}/${PGI_RELEASE}/bin:${PGI}/${PGI_ARCH}/${PGI_RELEASE}/mpi/mpenmpi/bin:${PATH}"
-    export  LM_LICENSE_FILE="${PGI}/license.dat"
+    export PGI="${HOME}/local/opt/pgi"
+    export PGI_RELEASE="2018"
+    export PGI_ARCH="linux86-64"
+    export PATH="${PGI}/${PGI_ARCH}/${PGI_RELEASE}/bin:${PGI}/${PGI_ARCH}/${PGI_RELEASE}/mpi/mpenmpi/bin:${PATH}"
+    export LM_LICENSE_FILE="${PGI}/license.dat"
+
+    return 0
+}
+
+function set_env_android_devkit() {
+    export PATH="${HOME}/local/opt/android-studio/bin:${PATH}"
+    export JAVA_HOME="${HOME}/local/opt/android-studio/jre"
+    export ANDROID_HOME="${HOME}/local/opt/android-sdk"
 
     return 0
 }
@@ -318,6 +327,7 @@ set_env_clangsay
 set_env_perl5
 set_env_go
 set_env_cuda
+set_env_android_devkit
 set_env_hosts
 
 test "${MACHTYPE}" = "x86_64"   && \
