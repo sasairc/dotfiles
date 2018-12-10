@@ -33,9 +33,9 @@ function set_env_generic() {
         export EDITOR=vim
 
     # fbterm利用時にTERM=fbtermを設定
-    if grep '^fbterm' /proc/${PPID}/cmdline > /dev/null; then
-        export TERM="fbterm"
-    fi
+    #if grep '^fbterm' /proc/${PPID}/cmdline > /dev/null; then
+    #    export TERM="fbterm"
+    #fi
 
     # 1. xterm及び、fbterm利用時はLANG=ja_JP.UTF-8を設定
     # 2. TERM=Linux等であればLANG=Cを設定
@@ -65,7 +65,7 @@ function set_env_expath() {
 function set_env_termux() {
     export PREFIX="/data/data/com.termux/files/usr"
     export PREFIX_LOCAL="${PREFIX}/local"
-    export PATH="${PREFIX_LOCAL}/bin:${PREFIX}/bin"
+    export PATH="${PREFIX_LOCAL}/bin:${PREFIX}/bin:${PREFIX}/bin/applets"
     export LD_LIBRARY_PATH="${PREFIX_LOCAL}/lib:${PREFIX}/lib"
     export MANPATH="${PREFIX_LOCAL}/share/man:${PREFIX}/share/man"
     export INCLUDE="${PREFIX_LOCAL}/include"
