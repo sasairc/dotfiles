@@ -15,9 +15,14 @@ init-xsession: .xsession
 	install -pd $(ROOTDIR)
 	install -pm 755 $< $(ROOTDIR)
 
+init-xbindkeysrc: .xbindkeysrc
+	install -pd $(ROOTDIR)
+	install -pm 755 $< $(ROOTDIR)
+
 init: init-Xmodmap	\
       init-Xresources	\
       init-xinitrc	\
-      init-xsession
+      init-xsession	\
+      init-xbindkeysrc
 
 .PHONY: init

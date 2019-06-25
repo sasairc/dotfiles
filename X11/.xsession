@@ -10,6 +10,7 @@ export LD_LIBRARY_PATH="${HOME}/local/lib:/usr/local/lib:/lib:/lib64:/usr/lib:/u
 xmodmap ~/.Xmodmap
 xset m 6 4
 xset r rate 192 32
+xbindkeys
 
 /usr/local/bin/pulseaudio --start
 /usr/bin/xscreensaver-command -exit
