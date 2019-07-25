@@ -65,7 +65,7 @@ function set_env_expath() {
 function set_env_termux() {
     export PREFIX="/data/data/com.termux/files/usr"
     export PREFIX_LOCAL="${PREFIX}/local"
-    export PATH="${PREFIX_LOCAL}/bin:${PREFIX}/bin:${PREFIX}/bin/applets"
+    export PATH="${PREFIX_LOCAL}/bin:${PREFIX}/bin:${PREFIX}/bin/applets:${HOME}/local/bin"
     export LD_LIBRARY_PATH="${PREFIX_LOCAL}/lib:${PREFIX}/lib"
     export MANPATH="${PREFIX_LOCAL}/share/man:${PREFIX}/share/man"
     export INCLUDE="${PREFIX_LOCAL}/include"
