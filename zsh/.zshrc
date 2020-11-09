@@ -188,6 +188,7 @@ function set_alias_generic() {
     alias w3m="w3m www.google.co.jp"
     alias debuild="test -d ./debian && dpkg-buildpackage -us -uc -d && fakeroot ./debian/rules clean && mv debian .."
     alias vlc="LD_LIBRARY_PATH=${HOME}/local/lib:/usr/local/lib:/lib:/lib64:/usr/lib:/usr/lib64 vlc"
+    alias slack="slack --logLevel info --silent"
 
     return 0
 }
@@ -287,6 +288,8 @@ function swtmpdir() {
 function mntrng() {
     test -f /var/log/rsync_backup.log   && \
         tail -f /var/log/rsync_backup.log &
+    test -f /var/log/smart.err          && \
+        tail -f /var/log/smart.err &
     clear
     clbiff
 
