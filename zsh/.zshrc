@@ -39,7 +39,7 @@ function set_env_generic() {
 
     # 1. xterm及び、fbterm利用時はLANG=ja_JP.UTF-8を設定
     # 2. TERM=Linux等であればLANG=Cを設定
-    if [ ${TERM} = "xterm" -o ${TERM} = "rxvt-256color" -o ${TERM} = "screen" -o ${TERM} = "screen-256color" -o ${TERM} = "fbterm" ]; then
+    if [ ${TERM} = "xterm" -o ${TERM} = "xterm-256color" -o ${TERM} = "rxvt-256color" -o ${TERM} = "screen" -o ${TERM} = "screen-256color" -o ${TERM} = "fbterm" ]; then
         export LANG="ja_JP.UTF-8"
     else
         export LANG="C"
@@ -112,6 +112,13 @@ function set_env_gcc_armhf_flags () {
     # ARM v8 Cortex-A53 processor
     #
     export CFLAGS="-Wall -O3 -mcpu=cortex-a53 -march=armv8-a+crc -mtune=cortex-a53 -mfloat-abi=hard -mfpu=neon-fp-armv8 -fforce-addr -pipe"
+    export CXXFLAGS="${CFLAGS}"
+
+    return 0
+}
+
+function set_env_gcc_generic_flags () {
+    export CFLAGS="-Wall -O3 -march=native -pipe"
     export CXXFLAGS="${CFLAGS}"
 
     return 0
@@ -333,10 +340,13 @@ set_env_cuda
 set_env_android_devkit
 set_env_hosts
 
-test "${MACHTYPE}" = "x86_64"   && \
+if [ "${MACHTYPE}" = "x86_64" ]; then
     set_env_gcc_x86_64_flags
-test "${MACHTYPE}" = "armv7l"  && \
+elif [ "${MACHTYPE}" = "armv7l" ]; then
     set_env_gcc_armhf_flags
+else
+    set_env_gcc_generic_flags
+fi
 
 set_alias_generic
 set_alias_git
