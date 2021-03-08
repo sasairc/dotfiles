@@ -1,6 +1,6 @@
 include ../config.mk
 
-init-uim: .uim
+init-uim: .uim.d
 	install -pd $(ROOTDIR)
 	install -pm 644 $< $(ROOTDIR)
 
