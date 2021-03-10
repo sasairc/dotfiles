@@ -172,7 +172,7 @@ function set_env_android_devkit() {
 }
 
 function set_env_clangsay() {
-    export COWPATH="/usr/share/clangsay/cows:${GHPROJ}/my_cows"
+    export COWPATH="/usr/local/share/clangsay/cows:${GHPROJ}/my_cows"
     export DEFAULT_COWFILE="yasuna_09"
 
     return 0
