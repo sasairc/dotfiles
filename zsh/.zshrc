@@ -47,7 +47,7 @@ function set_env_generic() {
     fi
 
     # スクリーンロックの無効化
-    export ROCKPRG=/bin/true
+    export LOCKPRG=/bin/true
 
     return 0
 }
