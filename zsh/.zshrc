@@ -10,7 +10,7 @@ function set_tty_opts() {
 }
 
 function set_env_generic() {
-#   setopt VI
+    # setopt VI
     export PROMPT="%{${fg[red]}%}%n@%m%{${reset_color}%}%f [ %~ ] %h %# "
 
     # history
@@ -43,8 +43,11 @@ function set_env_generic() {
         export LANG="ja_JP.UTF-8"
     else
         export LANG="C"
-        setterm --blank 0
+        #setterm --blank 0
     fi
+
+    # スクリーンロックの無効化
+    export ROCKPRG=/bin/true
 
     return 0
 }
@@ -192,7 +195,7 @@ function set_alias_generic() {
     alias rl="source ${HOME}/.zshrc"
     alias zh="history -i -E 1"
     alias mbhead="mbhead -p"
-    alias w3m="w3m www.google.co.jp"
+    alias w3m="w3m https://www.google.co.jp"
     alias debuild="test -d ./debian && dpkg-buildpackage -us -uc -d && fakeroot ./debian/rules clean && mv debian .."
     alias vlc="LD_LIBRARY_PATH=${HOME}/local/lib:/usr/local/lib:/lib:/lib64:/usr/lib:/usr/lib64 vlc"
     alias slack="slack --logLevel info --silent"
