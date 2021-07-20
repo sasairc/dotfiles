@@ -39,6 +39,13 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_NO_STORE
 setopt PUSHD_IGNORE_DUPS
 
+# history search
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey '^P' history-beginning-search-backward-end
+bindkey '^N' history-beginning-search-forward-end
+
 # editor
 export EDITOR=vim
 
