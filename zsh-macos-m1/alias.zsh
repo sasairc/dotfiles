@@ -1,5 +1,6 @@
 alias ..="cd .."
 alias v="vim"
+alias nv="nvim"
 alias sc="screen"
 alias sr="screen -r"
 alias ht="headtail --pretty"
