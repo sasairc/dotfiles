@@ -3,8 +3,6 @@
 ""
 
 " previm
-let g:previm_open_cmd = "/usr/local/bin/seamonkey"
-let g:previm_enable_realtime = 1
 augroup PrevimSetting
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown

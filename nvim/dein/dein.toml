@@ -5,7 +5,6 @@ hook_add = '''
     call deoplete#custom#option({'max_list': 30})
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#enable_ignore_case = 1
-    "let g:deoplete#enable_smart_case = 1
 '''
 
 # deoplete on vim requires plugin 1/2
@@ -15,3 +14,15 @@ repo = 'roxma/nvim-yarp'
 # deoplete on vim requires plugin 2/2
 [[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
+
+# lexima
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+# previm
+[[plugins]]
+repo ='kannokanno/previm'
+hook_add = '''
+    let g:previm_open_cmd = "open -a Firefox"
+    let g:previm_enable_realtime = 1
+'''
